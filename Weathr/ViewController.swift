@@ -19,10 +19,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var latitude = Double()
     var longitude = Double()
     
+    var notification = Notification()
+    var data = Data()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //function notification verifcation
-        notificationVerifcation()
+        notification.notificationVerifcation()
+        
         
         // Ask for Authorization from the User.
         self.locationManager.requestAlwaysAuthorization()
@@ -46,25 +50,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         cityLabel.text = weather.city(latitude, longitude: longitude)
     }
     
-    //Verify to see if the user want notifications to show up
-    func notificationVerifcation(){
-        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
-        
-        func scheduleLocal(sender: AnyObject) {
-            let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
-            
-            if settings!.types == .None{
-                let ac = UIAlertController(title: "Can't Schedule", message: "Either we don't have permission to scheduel notification, or we haven't asked yet", preferredStyle: .Alert)
-                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                presentViewController(ac, animated: true, completion: nil)
-                return
-            }
-        }
     
-    
-    
-    }
     
     //
 

@@ -10,10 +10,10 @@ import UIKit
 
 class Notification: UIViewController {
 
-    func notificationPopUp(){
+    func notify(text: String){
         let notification = UILocalNotification()
         notification.fireDate = NSDate(timeIntervalSinceNow: 5)
-        notification.alertBody = "Hey you! Yeah you! Swife to unlock!"
+        notification.alertBody = text
         notification.alertAction = "be awesome!"
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.userInfo = ["CustonField1": "w00t"]

@@ -27,7 +27,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         //function notification verifcation
         notification.notificationVerifcation()
         
-        
         // Ask for Authorization from the User.
         self.locationManager.requestAlwaysAuthorization()
         
@@ -44,14 +43,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        latitude = locValue.latitude
-        longitude = locValue.longitude
+        let lat = locValue.latitude
+        let long = locValue.longitude
+        latitude = lat
+        longitude = long
         
         if((longitude != 0.0) && (latitude != 0.0)){
+            locationManager.stopUpdatingLocation()
             weatherLabel.text = String(weather.temperature(latitude, longitude: longitude))
             cityLabel.text = weather.city(latitude, longitude: longitude)
+            notification.notify("It is currently \(String(weather.temperature(latitude, longitude: longitude))) in \(weather.city(latitude, longitude: longitude))")
         }
-        
     }
     
     

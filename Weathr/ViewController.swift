@@ -46,8 +46,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         latitude = locValue.latitude
         longitude = locValue.longitude
-        weatherLabel.text = String(weather.temperature(latitude, longitude: longitude))
-        cityLabel.text = weather.city(latitude, longitude: longitude)
+        
+        if((longitude != 0.0) && (latitude != 0.0)){
+            weatherLabel.text = String(weather.temperature(latitude, longitude: longitude))
+            cityLabel.text = weather.city(latitude, longitude: longitude)
+        }
+        
     }
     
     

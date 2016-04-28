@@ -10,8 +10,8 @@ import UIKit
 
 class Weather: NSObject {
     func temperature(latitude: Double, longitude: Double) -> Int{
-        var url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=e4ca3ac79d18533cfdc17db5cced6263")
-        var data = NSData(contentsOfURL: url!)
+        let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=e4ca3ac79d18533cfdc17db5cced6263")
+        let data = NSData(contentsOfURL: url!)
         
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)

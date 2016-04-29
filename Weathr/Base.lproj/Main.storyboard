@@ -6,25 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="eeu-uZ-kd4">
-            <objects>
-                <viewController id="58g-0B-Wl3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pEE-LF-ber"/>
-                        <viewControllerLayoutGuide type="bottom" id="0fa-ss-Dw8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ojY-Y3-aCf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="md9-W1-uIt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YyY-Hw-f2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="704" y="543"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7Pt-yG-mq7">
             <objects>
@@ -36,7 +17,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="AKU-rD-yeC"/>
-                        <segue destination="58g-0B-Wl3" kind="relationship" relationship="viewControllers" id="Dpi-j4-P0e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K62-Jx-cek" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -92,6 +72,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704" y="-106"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="j1h-jk-u7a">
+            <objects>
+                <viewController id="WOe-pD-BaO" customClass="SettingsViewController" customModule="Weathr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3C6-lN-fm1"/>
+                        <viewControllerLayoutGuide type="bottom" id="kGU-im-lQ6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ozZ-mq-cMc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jow-Wv-qLg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="s8T-Y6-8Xc">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s8T-Y6-8Xc" id="pBW-RC-8Fi" userLabel="MyCell">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="WOe-pD-BaO" id="D3r-7v-93i"/>
+                                    <outlet property="delegate" destination="WOe-pD-BaO" id="jW8-9x-A7F"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jow-Wv-qLg" firstAttribute="leading" secondItem="ozZ-mq-cMc" secondAttribute="leadingMargin" constant="-20" id="Bjo-vP-VPD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jow-Wv-qLg" secondAttribute="trailing" constant="-20" id="Owr-Kp-dCW"/>
+                            <constraint firstItem="Jow-Wv-qLg" firstAttribute="top" secondItem="ozZ-mq-cMc" secondAttribute="topMargin" id="cMw-90-VIt"/>
+                            <constraint firstItem="kGU-im-lQ6" firstAttribute="top" secondItem="Jow-Wv-qLg" secondAttribute="bottom" id="mPP-1g-8W6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="s8T-Y6-8Xc" id="LBA-Mn-m50"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w4H-G6-MGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704" y="558"/>
         </scene>
     </scenes>
     <resources>

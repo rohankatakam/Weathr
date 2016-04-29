@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="704" y="-106"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="j1h-jk-u7a">
             <objects>
-                <viewController id="WOe-pD-BaO" sceneMemberID="viewController">
+                <viewController id="WOe-pD-BaO" customClass="SettingsViewController" customModule="Weathr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3C6-lN-fm1"/>
                         <viewControllerLayoutGuide type="bottom" id="kGU-im-lQ6"/>
@@ -106,6 +106,9 @@
                             <constraint firstItem="kGU-im-lQ6" firstAttribute="top" secondItem="Jow-Wv-qLg" secondAttribute="bottom" id="mPP-1g-8W6"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="s8T-Y6-8Xc" id="LBA-Mn-m50"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4H-G6-MGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

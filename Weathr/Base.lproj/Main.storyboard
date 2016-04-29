@@ -67,7 +67,7 @@
             </objects>
             <point key="canvasLocation" x="704" y="-106"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Item-->
         <scene sceneID="j1h-jk-u7a">
             <objects>
                 <viewController id="WOe-pD-BaO" customClass="SettingsViewController" customModule="Weathr" customModuleProvider="target" sceneMemberID="viewController">
@@ -82,16 +82,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jow-Wv-qLg">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="s8T-Y6-8Xc">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s8T-Y6-8Xc" id="pBW-RC-8Fi" userLabel="MyCell">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="WOe-pD-BaO" id="D3r-7v-93i"/>
                                     <outlet property="delegate" destination="WOe-pD-BaO" id="jW8-9x-A7F"/>
@@ -106,9 +96,7 @@
                             <constraint firstItem="kGU-im-lQ6" firstAttribute="top" secondItem="Jow-Wv-qLg" secondAttribute="bottom" id="mPP-1g-8W6"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="tableView" destination="s8T-Y6-8Xc" id="LBA-Mn-m50"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="Item" id="gOh-7K-omQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w4H-G6-MGu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

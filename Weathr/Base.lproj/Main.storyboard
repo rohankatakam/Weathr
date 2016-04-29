@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -55,24 +56,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-xU-ApF">
-                                <rect key="frame" x="225" y="59" width="150" height="150"/>
+                                <rect key="frame" x="225" y="145" width="150" height="150"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYn-HK-Ypb">
-                                <rect key="frame" x="225" y="187" width="150" height="21"/>
+                                <rect key="frame" x="225" y="303" width="150" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="hnI-RZ-lMW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="CLd-xU-ApF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8uB-09-Wk3"/>
-                            <constraint firstItem="lYn-HK-Ypb" firstAttribute="top" secondItem="CLd-xU-ApF" secondAttribute="bottom" constant="8" id="ELt-Bu-IHT"/>
-                            <constraint firstItem="lYn-HK-Ypb" firstAttribute="top" secondItem="CLd-xU-ApF" secondAttribute="bottom" constant="8" id="Ggl-P2-HGg"/>
-                            <constraint firstItem="lYn-HK-Ypb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g5Z-ol-Tyk"/>
+                            <constraint firstItem="hnI-RZ-lMW" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="L1j-S6-Xwc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hnI-RZ-lMW" secondAttribute="trailing" constant="-20" id="QFL-4j-u2s"/>
+                            <constraint firstItem="lYn-HK-Ypb" firstAttribute="top" secondItem="CLd-xU-ApF" secondAttribute="bottom" constant="8" id="Qnk-1r-ALr"/>
+                            <constraint firstItem="CLd-xU-ApF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hn6-e3-UOG"/>
+                            <constraint firstItem="lYn-HK-Ypb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oLH-dX-bk3"/>
+                            <constraint firstItem="hnI-RZ-lMW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="oQC-tZ-uYl"/>
+                            <constraint firstItem="hnI-RZ-lMW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vK1-u8-lQx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Weather" image="weathr-Small" selectedImage="weathr-Small" id="oqD-PF-KjR" colorLabel="IBBuiltInLabel-Blue"/>
@@ -88,6 +95,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bg" width="750" height="1334"/>
         <image name="weathr-Small" width="29" height="29"/>
     </resources>
 </document>

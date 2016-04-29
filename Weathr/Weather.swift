@@ -41,4 +41,6 @@ class Weather: NSObject {
         }
         return ""
     }
+    
+    
 }

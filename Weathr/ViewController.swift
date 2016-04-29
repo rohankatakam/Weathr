@@ -55,6 +55,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let long = locValue.longitude
         latitude = lat
         longitude = long
+        print(String(weather.temperature(latitude, longitude: longitude)))
         
         if((longitude != 0.0) && (latitude != 0.0)){
             locationManager.stopUpdatingLocation()

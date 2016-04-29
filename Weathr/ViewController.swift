@@ -18,12 +18,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let weather = Weather()
     var latitude = Double()
     var longitude = Double()
+    var currentInfo = CurrentInfo()
     
     var notification = Notification()
     var data = Data()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        currentInfo.startTimer()
+        
         //function notification verifcation
         notification.notificationVerifcation()
         
@@ -38,6 +42,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
+        
+        
         
         
     }
@@ -57,9 +64,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    
-    
-    
+    func timer(){
+        currentInfo.updateTimer()
+    }
     
     
     

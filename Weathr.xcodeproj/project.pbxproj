@@ -17,6 +17,7 @@
 		3F2B5A1C1CB05056003AB1C8 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B5A1B1CB05056003AB1C8 /* Weather.swift */; };
 		3F2B5A1E1CB0507B003AB1C8 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B5A1D1CB0507B003AB1C8 /* Data.swift */; };
 		3F2B5A201CB050A1003AB1C8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B5A1F1CB050A1003AB1C8 /* Notification.swift */; };
+		3F60941D1CD2E09A00D82C5B /* CurrentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60941C1CD2E09A00D82C5B /* CurrentInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3F2B5A1B1CB05056003AB1C8 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		3F2B5A1D1CB0507B003AB1C8 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		3F2B5A1F1CB050A1003AB1C8 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		3F60941C1CD2E09A00D82C5B /* CurrentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3F13E1ED1CAEF3AF0075C7C6 /* AppDelegate.swift */,
 				3F13E1EF1CAEF3AF0075C7C6 /* ViewController.swift */,
 				3F2B5A1B1CB05056003AB1C8 /* Weather.swift */,
+				3F60941C1CD2E09A00D82C5B /* CurrentInfo.swift */,
 				3F2B5A1D1CB0507B003AB1C8 /* Data.swift */,
 				3F2B5A1F1CB050A1003AB1C8 /* Notification.swift */,
 				3F13E1F11CAEF3AF0075C7C6 /* Main.storyboard */,
@@ -273,6 +276,7 @@
 				3F13E1EE1CAEF3AF0075C7C6 /* AppDelegate.swift in Sources */,
 				3F2B5A1C1CB05056003AB1C8 /* Weather.swift in Sources */,
 				3F2B5A1E1CB0507B003AB1C8 /* Data.swift in Sources */,
+				3F60941D1CD2E09A00D82C5B /* CurrentInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

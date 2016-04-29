@@ -14,7 +14,7 @@ class Weather: NSObject {
         let data = NSData(contentsOfURL: url!)
         
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            var json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
             
             if let weather = json["main"] as? Dictionary<String, Double> {
                 let temp = weather["temp"]

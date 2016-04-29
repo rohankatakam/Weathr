@@ -8,7 +8,6 @@
         <!--View Controller-->
         <scene sceneID="eeu-uZ-kd4">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YyY-Hw-f2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="58g-0B-Wl3" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pEE-LF-ber"/>
@@ -21,6 +20,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="md9-W1-uIt"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YyY-Hw-f2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704" y="543"/>
         </scene>
@@ -75,7 +75,7 @@
                             <constraint firstItem="lYn-HK-Ypb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g5Z-ol-Tyk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weather" id="oqD-PF-KjR"/>
+                    <tabBarItem key="tabBarItem" title="Weather" image="weathr-Small" selectedImage="weathr-Small" id="oqD-PF-KjR" colorLabel="IBBuiltInLabel-Blue"/>
                     <navigationItem key="navigationItem" id="hHI-BP-YTw"/>
                     <connections>
                         <outlet property="cityLabel" destination="lYn-HK-Ypb" id="Yc6-R3-bAq"/>
@@ -87,4 +87,7 @@
             <point key="canvasLocation" x="704" y="-106"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="weathr-Small" width="29" height="29"/>
+    </resources>
 </document>

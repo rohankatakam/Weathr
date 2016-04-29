@@ -5,25 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="eeu-uZ-kd4">
-            <objects>
-                <viewController id="58g-0B-Wl3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="pEE-LF-ber"/>
-                        <viewControllerLayoutGuide type="bottom" id="0fa-ss-Dw8"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ojY-Y3-aCf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="md9-W1-uIt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YyY-Hw-f2q" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="704" y="543"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7Pt-yG-mq7">
             <objects>
@@ -35,7 +16,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="AKU-rD-yeC"/>
-                        <segue destination="58g-0B-Wl3" kind="relationship" relationship="viewControllers" id="Dpi-j4-P0e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K62-Jx-cek" userLabel="First Responder" sceneMemberID="firstResponder"/>

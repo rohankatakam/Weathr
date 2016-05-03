@@ -44,9 +44,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         
-        
-        
-        
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

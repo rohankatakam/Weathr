@@ -14,7 +14,6 @@ class Notification: UIViewController {
         let notification = UILocalNotification()
         notification.fireDate = NSDate(timeIntervalSinceNow: 5)
         notification.alertBody = text
-        notification.alertAction = "be awesome!"
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.userInfo = ["CustonField1": "w00t"]
         UIApplication.sharedApplication().scheduleLocalNotification(notification)

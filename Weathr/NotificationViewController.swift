@@ -8,16 +8,22 @@
 
 import UIKit
 
-class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var myTableView: UITableView!
     
-    var cities = ["Chicago", "Barrington", "South Barrington", "North Barrington"]
+    var weather = Weather()
+    var latitude = Double()
+    var longitude = Double()
+    
+    
+    var cities = ["notification part 1", "notification part 2", "notification part 3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.delegate = self
         myTableView.dataSource = self
+        
         
     }
     
@@ -37,7 +43,10 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            cities.removeAtIndex(indexPath.row)
+            myTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:  UITableViewRowAnimation.Automatic)
             
+        
         }
     }
 

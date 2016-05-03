@@ -10,6 +10,8 @@ import UIKit
 
 class Data: NSObject {
     
+    var timeNotified = ""
+    
     func load(textField: UITextField){
         if let savedText = NSUserDefaults.standardUserDefaults().stringForKey("savedString"){
             textField.text = savedText
@@ -20,5 +22,8 @@ class Data: NSObject {
     func save(textField: UITextField){
         NSUserDefaults.standardUserDefaults().setObject(textField.text!, forKey: "savedString")
     }
+    
+    
+    
     
 }

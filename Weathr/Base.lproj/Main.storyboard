@@ -16,7 +16,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Ka8-73-Pif"/>
+                        <segue destination="AGH-BK-CmJ" kind="relationship" relationship="viewControllers" id="Ka8-73-Pif"/>
                         <segue destination="ddX-aX-9sj" kind="relationship" relationship="viewControllers" id="U8W-gH-v7e"/>
                         <segue destination="6yR-vG-HvX" kind="relationship" relationship="viewControllers" id="CwA-ie-VBP"/>
                     </connections>
@@ -40,19 +40,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="hnI-RZ-lMW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-xU-ApF">
-                                <rect key="frame" x="225" y="145" width="150" height="150"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="---">
-                                        <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="50" name="Menlo-Bold"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYn-HK-Ypb">
                                 <rect key="frame" x="225" y="303" width="150" height="21"/>
                                 <attributedString key="attributedText">
@@ -60,6 +47,19 @@
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="30" name="Menlo-Regular"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-xU-ApF">
+                                <rect key="frame" x="225" y="145" width="150" height="150"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="---">
+                                        <attributes>
+                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="50" name="Menlo-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -78,8 +78,7 @@
                             <constraint firstItem="hnI-RZ-lMW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vK1-u8-lQx"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Weather" image="weathr-Small" selectedImage="weathr-Small" id="oqD-PF-KjR" colorLabel="IBBuiltInLabel-Blue"/>
-                    <navigationItem key="navigationItem" id="hHI-BP-YTw"/>
+                    <navigationItem key="navigationItem" title="Weather" id="hHI-BP-YTw"/>
                     <connections>
                         <outlet property="cityLabel" destination="lYn-HK-Ypb" id="Yc6-R3-bAq"/>
                         <outlet property="weatherLabel" destination="CLd-xU-ApF" id="vag-4J-cUE"/>
@@ -87,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704" y="-106"/>
+            <point key="canvasLocation" x="1516" y="-106"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="CRx-a0-st3">
@@ -101,7 +100,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H3k-4C-8SY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="DZx-wh-8WZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="No Weather Updates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YES-lx-3xi">
+                                <rect key="frame" x="191" y="278" width="219" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H3k-4C-8SY">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -122,6 +130,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YES-lx-3xi" firstAttribute="centerY" secondItem="SAG-SK-So4" secondAttribute="centerY" id="9q8-rg-ehG"/>
                             <constraint firstItem="BCE-5U-sVw" firstAttribute="top" secondItem="H3k-4C-8SY" secondAttribute="bottom" id="Acp-kW-ev8"/>
                             <constraint firstItem="H3k-4C-8SY" firstAttribute="centerX" secondItem="SAG-SK-So4" secondAttribute="centerX" id="Ew4-wi-FH7"/>
                             <constraint firstItem="H3k-4C-8SY" firstAttribute="top" secondItem="SAG-SK-So4" secondAttribute="top" constant="-20" id="Jr6-5A-okd"/>
@@ -132,6 +141,7 @@
                             <constraint firstItem="H3k-4C-8SY" firstAttribute="leading" secondItem="SAG-SK-So4" secondAttribute="leading" id="ZKp-sH-FNU"/>
                             <constraint firstItem="BCE-5U-sVw" firstAttribute="top" secondItem="H3k-4C-8SY" secondAttribute="bottom" id="bUA-eS-wLT"/>
                             <constraint firstItem="H3k-4C-8SY" firstAttribute="leading" secondItem="SAG-SK-So4" secondAttribute="leadingMargin" constant="-20" id="cpn-e0-Y8U"/>
+                            <constraint firstItem="YES-lx-3xi" firstAttribute="centerX" secondItem="SAG-SK-So4" secondAttribute="centerX" id="ddJ-0j-m1t"/>
                             <constraint firstAttribute="trailingMargin" secondItem="H3k-4C-8SY" secondAttribute="trailing" constant="-20" id="gPv-CZ-t3c"/>
                             <constraint firstItem="H3k-4C-8SY" firstAttribute="centerX" secondItem="SAG-SK-So4" secondAttribute="centerX" id="ghg-eK-XfY"/>
                             <constraint firstItem="H3k-4C-8SY" firstAttribute="leading" secondItem="SAG-SK-So4" secondAttribute="leading" id="pPU-6Z-AvO"/>
@@ -154,9 +164,16 @@
                         </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="bg" id="FPB-PO-Ydi"/>
-                    <navigationItem key="navigationItem" title="Notifications" id="26e-Fj-PsI"/>
+                    <navigationItem key="navigationItem" title="Notifications" id="26e-Fj-PsI">
+                        <barButtonItem key="rightBarButtonItem" title="Clear" id="zSy-2D-gI3">
+                            <connections>
+                                <action selector="clearButton:" destination="g7K-e3-naw" id="L3b-AH-KFf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myTableView" destination="H3k-4C-8SY" id="U7d-Y6-Rrp"/>
+                        <outlet property="noNotifications" destination="YES-lx-3xi" id="oVy-1w-UER"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNb-l3-HVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -185,7 +202,7 @@
         <!--Settings-->
         <scene sceneID="2qp-Q2-P9Q">
             <objects>
-                <viewController id="9qR-Qq-XCp" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9qR-Qq-XCp" customClass="SettingsViewController" customModule="Weathr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NNs-42-jWJ"/>
                         <viewControllerLayoutGuide type="bottom" id="kjk-0G-zWC"/>
@@ -193,19 +210,52 @@
                     <view key="view" contentMode="scaleToFill" id="cPF-3j-fId">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="SwQ-Qk-ZHF">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6w1-ej-JAe">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="fjo-ZY-au9">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fjo-ZY-au9" id="0Bl-4Z-98Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9qR-Qq-XCp" id="9I3-so-x7t"/>
+                                    <outlet property="delegate" destination="9qR-Qq-XCp" id="OJB-ZR-Cwb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6w1-ej-JAe" firstAttribute="centerX" secondItem="cPF-3j-fId" secondAttribute="centerX" id="AVv-VZ-lcc"/>
+                            <constraint firstItem="kjk-0G-zWC" firstAttribute="top" secondItem="6w1-ej-JAe" secondAttribute="bottom" id="EE5-nf-WZw"/>
+                            <constraint firstItem="6w1-ej-JAe" firstAttribute="top" secondItem="NNs-42-jWJ" secondAttribute="bottom" id="H2j-K1-P2B"/>
+                            <constraint firstAttribute="trailing" secondItem="6w1-ej-JAe" secondAttribute="trailing" id="ZVQ-W2-NSb"/>
+                            <constraint firstItem="6w1-ej-JAe" firstAttribute="leading" secondItem="cPF-3j-fId" secondAttribute="leading" id="cyO-VP-6ha"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="9f6-IE-hdB"/>
+                    <connections>
+                        <outlet property="myTableCell" destination="6w1-ej-JAe" id="GCX-K5-HWK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pb2-0n-hld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1516" y="1240"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Settings-->
         <scene sceneID="beS-mS-JDD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6yR-vG-HvX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="EuP-1u-l6g"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Icon-Small" id="EuP-1u-l6g"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ClJ-7T-frG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -220,9 +270,29 @@
             </objects>
             <point key="canvasLocation" x="704" y="1240"/>
         </scene>
+        <!--Weather-->
+        <scene sceneID="Elc-RM-a8n">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AGH-BK-CmJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Weather" image="weathr-Small" selectedImage="weathr-Small" id="oqD-PF-KjR" colorLabel="IBBuiltInLabel-Blue"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ynh-l2-ObR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="YsP-j5-geA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9du-Nv-hZ8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704" y="-106"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Icon-29" width="29" height="29"/>
+        <image name="Icon-Small" width="29" height="29"/>
         <image name="bg" width="750" height="1334"/>
         <image name="weathr-Small" width="29" height="29"/>
     </resources>

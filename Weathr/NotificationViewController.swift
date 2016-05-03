@@ -11,29 +11,28 @@ import UIKit
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var myTableView: UITableView!
-    
-    var weather = Weather()
-    var latitude = Double()
-    var longitude = Double()
+    @IBOutlet weak var noNotifications: UILabel!
     
     
-    var cities = ["notification part 1", "notification part 2", "notification part 3"]
+    var notify = ["notification part 1", "notification part 2", "notification part 3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         myTableView.delegate = self
         myTableView.dataSource = self
-        
+       
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+        showLabel()
+        return notify.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var myCell = myTableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! UITableViewCell
-        myCell.textLabel?.text = cities[indexPath.row]
+        myCell.textLabel?.text = notify[indexPath.row]
         return myCell
     }
     
@@ -43,12 +42,29 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            cities.removeAtIndex(indexPath.row)
+            notify.removeAtIndex(indexPath.row)
             myTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:  UITableViewRowAnimation.Automatic)
+            showLabel()
             
         
         }
     }
+    
+    func showLabel(){
+        
+        if notify.count > 0{
+            noNotifications.hidden = true
+        }else{
+            noNotifications.hidden = false
+        }
+        
+    }
 
+    @IBAction func clearButton(sender: AnyObject) {
+        notify.removeAll()
+        myTableView.reloadData()
+        noNotifications.hidden = false
+    }
+    
     
 }

@@ -17,7 +17,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Ka8-73-Pif"/>
-                        <segue destination="g7K-e3-naw" kind="relationship" relationship="viewControllers" id="U8W-gH-v7e"/>
+                        <segue destination="ddX-aX-9sj" kind="relationship" relationship="viewControllers" id="U8W-gH-v7e"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K62-Jx-cek" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="704" y="-106"/>
         </scene>
-        <!--View Controller-->
+        <!--Notifications-->
         <scene sceneID="CRx-a0-st3">
             <objects>
-                <viewController id="g7K-e3-naw" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="g7K-e3-naw" customClass="NotificationViewController" customModule="Weathr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ebC-ov-djn"/>
                         <viewControllerLayoutGuide type="bottom" id="BCE-5U-sVw"/>
@@ -99,11 +99,84 @@
                     <view key="view" contentMode="scaleToFill" id="SAG-SK-So4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H3k-4C-8SY">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="top" selectionStyle="none" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="myCell" id="HaS-Qe-ife">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HaS-Qe-ife" id="HjP-85-Lih">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="SAG-SK-So4" id="Hk3-Mk-r2a"/>
+                                    <outlet property="delegate" destination="SAG-SK-So4" id="H4P-eD-tuZ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BCE-5U-sVw" firstAttribute="top" secondItem="H3k-4C-8SY" secondAttribute="bottom" id="Acp-kW-ev8"/>
+                            <constraint firstItem="H3k-4C-8SY" firstAttribute="centerX" secondItem="SAG-SK-So4" secondAttribute="centerX" id="Ew4-wi-FH7"/>
+                            <constraint firstItem="H3k-4C-8SY" firstAttribute="top" secondItem="SAG-SK-So4" secondAttribute="top" constant="-20" id="Jr6-5A-okd"/>
+                            <constraint firstItem="H3k-4C-8SY" firstAttribute="top" secondItem="ebC-ov-djn" secondAttribute="bottom" id="NMb-a3-jcx"/>
+                            <constraint firstItem="H3k-4C-8SY" firstAttribute="top" secondItem="ebC-ov-djn" secondAttribute="bottom" id="Pcb-kM-XEh"/>
+                            <constraint firstItem="H3k-4C-8SY" firstAttribute="centerX" secondItem="SAG-SK-So4" secondAttribute="centerX" id="Puf-IF-GXE"/>
+                            <constraint firstItem="BCE-5U-sVw" firstAttribute="top" secondItem="H3k-4C-8SY" secondAttribute="bottom" id="REV-4y-rmZ"/>
+                            <constraint firstItem="H3k-4C-8SY" firstAttribute="leading" secondItem="SAG-SK-So4" secondAttribute="leading" id="ZKp-sH-FNU"/>
+                            <constraint firstItem="BCE-5U-sVw" firstAttribute="top" secondItem="H3k-4C-8SY" secondAttribute="bottom" id="bUA-eS-wLT"/>
+                            <constraint firstItem="H3k-4C-8SY" firstAttribute="leading" secondItem="SAG-SK-So4" secondAttribute="leadingMargin" constant="-20" id="cpn-e0-Y8U"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H3k-4C-8SY" secondAttribute="trailing" constant="-20" id="gPv-CZ-t3c"/>
+                            <constraint firstItem="H3k-4C-8SY" firstAttribute="centerX" secondItem="SAG-SK-So4" secondAttribute="centerX" id="ghg-eK-XfY"/>
+                            <constraint firstItem="H3k-4C-8SY" firstAttribute="leading" secondItem="SAG-SK-So4" secondAttribute="leading" id="pPU-6Z-AvO"/>
+                            <constraint firstAttribute="trailing" secondItem="H3k-4C-8SY" secondAttribute="trailing" id="rOn-Pm-1zv"/>
+                            <constraint firstAttribute="trailing" secondItem="H3k-4C-8SY" secondAttribute="trailing" id="v9J-uN-msG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ew4-wi-FH7"/>
+                                <exclude reference="Jr6-5A-okd"/>
+                                <exclude reference="NMb-a3-jcx"/>
+                                <exclude reference="ZKp-sH-FNU"/>
+                                <exclude reference="ghg-eK-XfY"/>
+                                <exclude reference="pPU-6Z-AvO"/>
+                                <exclude reference="rOn-Pm-1zv"/>
+                                <exclude reference="v9J-uN-msG"/>
+                                <exclude reference="REV-4y-rmZ"/>
+                                <exclude reference="bUA-eS-wLT"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Pcd-fW-KSX"/>
+                    <navigationItem key="navigationItem" title="Notifications" id="26e-Fj-PsI"/>
+                    <connections>
+                        <outlet property="myTableView" destination="H3k-4C-8SY" id="U7d-Y6-Rrp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNb-l3-HVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1516" y="578"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qqL-Pt-o1g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ddX-aX-9sj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Pcd-fW-KSX"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N48-Jk-EqK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="g7K-e3-naw" kind="relationship" relationship="rootViewController" id="dpn-3F-bOZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKF-pi-6Xb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704" y="578"/>
         </scene>

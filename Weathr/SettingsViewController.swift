@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol cellModelChanged {
+    func cellModelSwitchTapped(model: SettingsTableViewCell)
+}
+
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var myTableCell: UITableView!
@@ -35,30 +39,34 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         return setting.count
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+       
+        let cell = myTableCell.dequeueReusableCellWithIdentifier("myCell") as! SettingsTableViewCell
+        cell.textLabel?.text = "It Didn't Work"
         
-        
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "myCell")
-        
-        
-        
-        cell.textLabel?.text = setting[indexPath.row]
-        
+        cell.titleText?.text = setting[indexPath.row]
         
         //func for table View Cell
-        func description(x:Int,y: String){
+        func description(x:Int,y: String, z: String){
             if setting[x] == setting[indexPath.row]{
-                cell.detailTextLabel?.text = y
+                cell.subTitle?.text = y
+                cell.outputText?.text = z
+
             }
         }
         
         
-        description(0, y: userOptions.dailyNotificationSubTitle)
-        description(1, y: userOptions.freqencySubtitle)
-        description(2, y: "Send a test notification")
+        description(0, y: userOptions.dailyNotificationSubTitle, z: userOptions.dailyNotification)
+        description(1, y: userOptions.freqencySubtitle, z: userOptions.frequency)
+        description(2, y: "Send a test notification", z: "")
         
-       
+        
+        
         return cell
     }
     

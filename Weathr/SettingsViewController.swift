@@ -39,36 +39,27 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         
-        //let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "myCell")
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "myCell")
         
-        let cellIdentifier = "myCell"
         
-        var cell = myTableCell.dequeueReusableCellWithIdentifier("myCell")! as? UITableViewCell
         
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Value2, reuseIdentifier: cellIdentifier)
-            //func for table View Cell
-            func description(x:Int,y: String){
-                if setting[x] == setting[indexPath.row]{
-                    cell!.detailTextLabel?.text = y
-                }
+        cell.textLabel?.text = setting[indexPath.row]
+        
+        
+        //func for table View Cell
+        func description(x:Int,y: String){
+            if setting[x] == setting[indexPath.row]{
+                cell.detailTextLabel?.text = y
             }
-            
-            
-            description(0, y: userOptions.dailyNotificationSubTitle)
-            description(1, y: userOptions.freqencySubtitle)
-            description(2, y: "Send a test notification")
-
         }
         
         
-        /////
-        cell!.textLabel?.text = setting[indexPath.row]
-        
-        
+        description(0, y: userOptions.dailyNotificationSubTitle)
+        description(1, y: userOptions.freqencySubtitle)
+        description(2, y: "Send a test notification")
         
        
-        return cell!
+        return cell
     }
     
   

@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-116" y="213"/>
         </scene>
-        <!--Weather-->
+        <!--Weathr-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Weathr" customModuleProvider="target" sceneMemberID="viewController">
@@ -78,7 +78,7 @@
                             <constraint firstItem="hnI-RZ-lMW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vK1-u8-lQx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Weather" id="hHI-BP-YTw"/>
+                    <navigationItem key="navigationItem" title="Weathr" id="hHI-BP-YTw"/>
                     <connections>
                         <outlet property="cityLabel" destination="lYn-HK-Ypb" id="Yc6-R3-bAq"/>
                         <outlet property="weatherLabel" destination="CLd-xU-ApF" id="vag-4J-cUE"/>

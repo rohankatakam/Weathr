@@ -28,6 +28,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         myTableCell.delegate = self
         myTableCell.dataSource = self
         
+        
+        //Identifier for custom Cell
+        myTableCell.registerNib(UINib(nibName: "myCustomCell", bundle: nil), forCellReuseIdentifier: "myCustomCell")
+        
     }
     
     override func viewWillAppear(animated: Bool) {

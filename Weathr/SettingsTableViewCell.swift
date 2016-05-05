@@ -10,10 +10,10 @@ import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
 
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var outputLabel: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,8 +27,6 @@ class SettingsTableViewCell: UITableViewCell {
     }
     
    
-    @IBAction func switchChange(sender: AnyObject) {
     
-    }
 
 }

@@ -1,21 +1,19 @@
 //
-//  SettingsTableViewCell.swift
+//  SettingTableViewCell.swift
 //  Weathr
 //
-//  Created by MWen1 on 5/4/16.
+//  Created by MWen1 on 5/5/16.
 //  Copyright © 2016 Rohan. All rights reserved.
 //
 
 import UIKit
 
-class SettingsTableViewCell: UITableViewCell {
+class SettingTableViewCell: UITableViewCell {
 
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
-    @IBOutlet weak var outputLabel: UILabel!
     @IBOutlet weak var switchOutlet: UISwitch!
-    
+    @IBOutlet weak var outputLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,8 +24,5 @@ class SettingsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-   
-    
 
 }

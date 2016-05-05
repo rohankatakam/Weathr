@@ -31,9 +31,19 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let myCell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "subtitleCell")
-        myCell.textLabel?.text = notify[indexPath.row]
+        //let myCell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "subtitleCell")
         
+        let myCell = myTableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! NotificationsTableViewCell
+        
+        func customView(a: String, c: String, d: String, e: String, f: String){
+            myCell.timeLabel.text = a
+            myCell.conditionLabel.text = c
+            myCell.tempLabel.text = d
+            myCell.humidityLabel.text = "Humidity Level: " + e
+            myCell.windLabel.text = "Wind Speed " + f
+        }
+        
+        customView("6:00am", c: "Windy", d: "60F", e: "68", f: "80mph")
         
         return myCell
     }

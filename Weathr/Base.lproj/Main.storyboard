@@ -293,10 +293,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="wZ7-NJ-cPi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="wZ7-NJ-cPi">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fAe-3X-hc3">
+                            <tableView clipsSubviews="YES" alpha="0.59999999999999998" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="86" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fAe-3X-hc3">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -359,6 +359,10 @@
                             <constraint firstItem="TFX-RN-dhZ" firstAttribute="top" secondItem="fAe-3X-hc3" secondAttribute="bottom" id="0c1-es-pZk"/>
                             <constraint firstItem="fAe-3X-hc3" firstAttribute="top" secondItem="PGk-qe-4I4" secondAttribute="bottom" id="0d9-Ub-msc"/>
                             <constraint firstItem="fAe-3X-hc3" firstAttribute="leading" secondItem="h3X-o1-j1I" secondAttribute="leading" id="3H9-c2-pIn"/>
+                            <constraint firstItem="wZ7-NJ-cPi" firstAttribute="top" secondItem="h3X-o1-j1I" secondAttribute="top" id="4rM-1Z-VkE"/>
+                            <constraint firstItem="wZ7-NJ-cPi" firstAttribute="leading" secondItem="h3X-o1-j1I" secondAttribute="leading" id="BTP-yu-tBk"/>
+                            <constraint firstAttribute="bottom" secondItem="wZ7-NJ-cPi" secondAttribute="bottom" id="NMh-qz-Ab2"/>
+                            <constraint firstAttribute="trailing" secondItem="wZ7-NJ-cPi" secondAttribute="trailing" id="QFf-OR-qps"/>
                             <constraint firstAttribute="trailing" secondItem="fAe-3X-hc3" secondAttribute="trailing" id="ipb-uR-C9H"/>
                         </constraints>
                     </view>
@@ -390,11 +394,11 @@
             </objects>
             <point key="canvasLocation" x="704" y="-106"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="eb8-e8-XWQ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qQo-hZ-nJS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="X2f-NW-KGd"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Icon-Small" id="JBX-Qh-Yah"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nfr-BC-seM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -412,6 +416,7 @@
     </scenes>
     <resources>
         <image name="Icon-29" width="29" height="29"/>
+        <image name="Icon-Small" width="29" height="29"/>
         <image name="bg" width="750" height="1334"/>
         <image name="weathr-Small" width="29" height="29"/>
     </resources>

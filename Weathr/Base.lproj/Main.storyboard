@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uNb-l3-HVq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2328" y="578"/>
+            <point key="canvasLocation" x="1516" y="572"/>
         </scene>
         <!--Notifications-->
         <scene sceneID="qqL-Pt-o1g">
@@ -201,7 +201,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xKF-pi-6Xb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="578"/>
+            <point key="canvasLocation" x="704" y="564"/>
         </scene>
         <!--Weather-->
         <scene sceneID="Elc-RM-a8n">
@@ -222,7 +222,7 @@
             </objects>
             <point key="canvasLocation" x="704" y="-106"/>
         </scene>
-        <!--Settings Table View Controller-->
+        <!--Settings-->
         <scene sceneID="CQo-Uz-71G">
             <objects>
                 <tableViewController id="G0T-JN-3va" customClass="SettingsTableViewController" customModule="Weathr" customModuleProvider="target" sceneMemberID="viewController">
@@ -238,38 +238,42 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-qc-nnY">
-                                            <rect key="frame" x="8" y="42" width="61" height="21"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7x1-1j-4O9">
                                             <rect key="frame" x="494" y="44" width="98" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XP4-2I-tHZ">
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XP4-2I-tHZ">
                                             <rect key="frame" x="543" y="8" width="51" height="31"/>
                                         </switch>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TXP-oH-ked">
-                                            <rect key="frame" x="8" y="13" width="122" height="21"/>
+                                            <rect key="frame" x="8" y="13" width="356" height="21"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-qc-nnY">
+                                            <rect key="frame" x="8" y="42" width="356" height="21"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="XP4-2I-tHZ" firstAttribute="top" secondItem="MqL-lX-LEl" secondAttribute="top" constant="8" id="AWF-0t-ziR"/>
                                         <constraint firstItem="ga6-qc-nnY" firstAttribute="leading" secondItem="MqL-lX-LEl" secondAttribute="leading" constant="8" id="LmZ-57-8tk"/>
                                         <constraint firstAttribute="bottom" secondItem="7x1-1j-4O9" secondAttribute="bottom" constant="4" id="O8d-52-pi5"/>
                                         <constraint firstAttribute="trailing" secondItem="7x1-1j-4O9" secondAttribute="trailing" constant="8" id="TWK-hD-T9K"/>
+                                        <constraint firstAttribute="trailing" secondItem="XP4-2I-tHZ" secondAttribute="trailing" constant="8" id="YQD-Oj-UEZ"/>
                                         <constraint firstAttribute="bottom" secondItem="ga6-qc-nnY" secondAttribute="bottom" constant="6" id="f9f-v6-9tt"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="outputLabel" destination="7x1-1j-4O9" id="b3y-78-Hul"/>
                                     <outlet property="subTitleLabel" destination="ga6-qc-nnY" id="3kC-r3-Jij"/>
+                                    <outlet property="switchOutlet" destination="XP4-2I-tHZ" id="zxX-TN-SbZ"/>
+                                    <outlet property="titleLabel" destination="TXP-oH-ked" id="Wxl-QJ-I8i"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -278,17 +282,17 @@
                             <outlet property="delegate" destination="G0T-JN-3va" id="ulL-d8-aob"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="H1O-wU-E8B"/>
+                    <navigationItem key="navigationItem" title="Settings" id="H1O-wU-E8B"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jcT-K0-x4X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="728" y="1097"/>
+            <point key="canvasLocation" x="1516" y="1241"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Settings-->
         <scene sceneID="duy-ot-YMA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Xn-Nw-28p" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="ktz-Ns-Lb8"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Icon-Small" id="ktz-Ns-Lb8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bAY-Vz-ABi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -301,11 +305,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aTv-82-eld" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-84" y="1097"/>
+            <point key="canvasLocation" x="704" y="1241"/>
         </scene>
     </scenes>
     <resources>
         <image name="Icon-29" width="29" height="29"/>
+        <image name="Icon-Small" width="29" height="29"/>
         <image name="bg" width="750" height="1334"/>
         <image name="weathr-Small" width="29" height="29"/>
     </resources>

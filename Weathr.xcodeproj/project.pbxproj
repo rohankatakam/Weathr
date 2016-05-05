@@ -20,9 +20,7 @@
 		3F60941D1CD2E09A00D82C5B /* CurrentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60941C1CD2E09A00D82C5B /* CurrentInfo.swift */; };
 		3F9DA9EB1CD98578004C2550 /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9DA9EA1CD98578004C2550 /* UserOptions.swift */; };
 		3FB38A281CD913DE00075749 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB38A271CD913DE00075749 /* NotificationViewController.swift */; };
-		3FDF6B361CDA5FE400D82E30 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FDF6B351CDA5FE400D82E30 /* SettingsViewController.swift */; };
-		3FE383F21CDA892800E20F9E /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE383F11CDA892800E20F9E /* SettingsTableViewCell.swift */; };
-		3FE383F41CDA894900E20F9E /* SettingTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE383F31CDA894900E20F9E /* SettingTableView.xib */; };
+		3FCC1E531CDAE78C00F4FA32 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC1E521CDAE78C00F4FA32 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,9 +60,7 @@
 		3F60941C1CD2E09A00D82C5B /* CurrentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentInfo.swift; sourceTree = "<group>"; };
 		3F9DA9EA1CD98578004C2550 /* UserOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOptions.swift; sourceTree = "<group>"; };
 		3FB38A271CD913DE00075749 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		3FDF6B351CDA5FE400D82E30 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		3FE383F11CDA892800E20F9E /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		3FE383F31CDA894900E20F9E /* SettingTableView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableView.xib; sourceTree = "<group>"; };
+		3FCC1E521CDAE78C00F4FA32 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,10 +118,8 @@
 				3F2B5A1D1CB0507B003AB1C8 /* Data.swift */,
 				3F2B5A1F1CB050A1003AB1C8 /* Notification.swift */,
 				3F13E1F11CAEF3AF0075C7C6 /* Main.storyboard */,
+				3FCC1E521CDAE78C00F4FA32 /* SettingsViewController.swift */,
 				3FB38A271CD913DE00075749 /* NotificationViewController.swift */,
-				3FDF6B351CDA5FE400D82E30 /* SettingsViewController.swift */,
-				3FE383F11CDA892800E20F9E /* SettingsTableViewCell.swift */,
-				3FE383F31CDA894900E20F9E /* SettingTableView.xib */,
 				3F13E1EF1CAEF3AF0075C7C6 /* ViewController.swift */,
 				3F13E1F41CAEF3AF0075C7C6 /* Assets.xcassets */,
 				3F13E1F61CAEF3AF0075C7C6 /* LaunchScreen.storyboard */,
@@ -261,7 +255,6 @@
 			files = (
 				3F13E1F81CAEF3AF0075C7C6 /* LaunchScreen.storyboard in Resources */,
 				3F13E1F51CAEF3AF0075C7C6 /* Assets.xcassets in Resources */,
-				3FE383F41CDA894900E20F9E /* SettingTableView.xib in Resources */,
 				3F13E1F31CAEF3AF0075C7C6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,14 +282,13 @@
 			files = (
 				3F13E1F01CAEF3AF0075C7C6 /* ViewController.swift in Sources */,
 				3F2B5A201CB050A1003AB1C8 /* Notification.swift in Sources */,
-				3FDF6B361CDA5FE400D82E30 /* SettingsViewController.swift in Sources */,
 				3F13E1EE1CAEF3AF0075C7C6 /* AppDelegate.swift in Sources */,
 				3FB38A281CD913DE00075749 /* NotificationViewController.swift in Sources */,
 				3F2B5A1C1CB05056003AB1C8 /* Weather.swift in Sources */,
 				3F9DA9EB1CD98578004C2550 /* UserOptions.swift in Sources */,
 				3F2B5A1E1CB0507B003AB1C8 /* Data.swift in Sources */,
-				3FE383F21CDA892800E20F9E /* SettingsTableViewCell.swift in Sources */,
 				3F60941D1CD2E09A00D82C5B /* CurrentInfo.swift in Sources */,
+				3FCC1E531CDAE78C00F4FA32 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@ class NotifyRingTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var conditionLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var backgroundCell: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

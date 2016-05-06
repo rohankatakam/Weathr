@@ -19,6 +19,8 @@
 		3F2B5A201CB050A1003AB1C8 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2B5A1F1CB050A1003AB1C8 /* Notification.swift */; };
 		3F60941D1CD2E09A00D82C5B /* CurrentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F60941C1CD2E09A00D82C5B /* CurrentInfo.swift */; };
 		3F9DA9EB1CD98578004C2550 /* UserOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9DA9EA1CD98578004C2550 /* UserOptions.swift */; };
+		3FB0BA131CDC77DA002667FC /* NotifyRingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0BA121CDC77DA002667FC /* NotifyRingViewController.swift */; };
+		3FB0BA151CDC7C4A002667FC /* NotifyRingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB0BA141CDC7C4A002667FC /* NotifyRingTableViewCell.swift */; };
 		3FB38A281CD913DE00075749 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB38A271CD913DE00075749 /* NotificationViewController.swift */; };
 		3FCC1E611CDBCFA700F4FA32 /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC1E601CDBCFA700F4FA32 /* NotificationsTableViewCell.swift */; };
 		3FCC1E631CDBD53900F4FA32 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCC1E621CDBD53900F4FA32 /* SettingsViewController.swift */; };
@@ -61,6 +63,8 @@
 		3F2B5A1F1CB050A1003AB1C8 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		3F60941C1CD2E09A00D82C5B /* CurrentInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentInfo.swift; sourceTree = "<group>"; };
 		3F9DA9EA1CD98578004C2550 /* UserOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOptions.swift; sourceTree = "<group>"; };
+		3FB0BA121CDC77DA002667FC /* NotifyRingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyRingViewController.swift; sourceTree = "<group>"; };
+		3FB0BA141CDC7C4A002667FC /* NotifyRingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotifyRingTableViewCell.swift; sourceTree = "<group>"; };
 		3FB38A271CD913DE00075749 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		3FCC1E601CDBCFA700F4FA32 /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationsTableViewCell.swift; path = ../NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		3FCC1E621CDBD53900F4FA32 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -122,11 +126,13 @@
 				3F2B5A1D1CB0507B003AB1C8 /* Data.swift */,
 				3F2B5A1F1CB050A1003AB1C8 /* Notification.swift */,
 				3F13E1F11CAEF3AF0075C7C6 /* Main.storyboard */,
+				3FB0BA141CDC7C4A002667FC /* NotifyRingTableViewCell.swift */,
 				3FCC1E641CDBD64400F4FA32 /* SettingTableViewCell.swift */,
 				3FCC1E621CDBD53900F4FA32 /* SettingsViewController.swift */,
 				3FB38A271CD913DE00075749 /* NotificationViewController.swift */,
 				3FCC1E601CDBCFA700F4FA32 /* NotificationsTableViewCell.swift */,
 				3F13E1EF1CAEF3AF0075C7C6 /* ViewController.swift */,
+				3FB0BA121CDC77DA002667FC /* NotifyRingViewController.swift */,
 				3F13E1F41CAEF3AF0075C7C6 /* Assets.xcassets */,
 				3F13E1F61CAEF3AF0075C7C6 /* LaunchScreen.storyboard */,
 				3F13E1F91CAEF3AF0075C7C6 /* Info.plist */,
@@ -286,7 +292,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FB0BA151CDC7C4A002667FC /* NotifyRingTableViewCell.swift in Sources */,
 				3FCC1E651CDBD64400F4FA32 /* SettingTableViewCell.swift in Sources */,
+				3FB0BA131CDC77DA002667FC /* NotifyRingViewController.swift in Sources */,
 				3FCC1E611CDBCFA700F4FA32 /* NotificationsTableViewCell.swift in Sources */,
 				3F13E1F01CAEF3AF0075C7C6 /* ViewController.swift in Sources */,
 				3F2B5A201CB050A1003AB1C8 /* Notification.swift in Sources */,

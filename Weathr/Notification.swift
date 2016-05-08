@@ -6,6 +6,7 @@
 //  Copyright © 2016 Rohan. All rights reserved.
 //
 
+import RealmSwift
 import UIKit
 
 class Notification: UIViewController {

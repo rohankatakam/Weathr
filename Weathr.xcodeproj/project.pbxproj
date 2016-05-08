@@ -144,20 +144,11 @@
 		3F13E1EC1CAEF3AF0075C7C6 /* Weathr */ = {
 			isa = PBXGroup;
 			children = (
+				3FEF94E51CDEF6A3001BFA5A /* TableViewCells */,
+				3FEF94E41CDEF678001BFA5A /* Classes */,
+				3FEF94E31CDEF658001BFA5A /* View Controllers */,
 				3F13E1ED1CAEF3AF0075C7C6 /* AppDelegate.swift */,
-				3F2B5A1B1CB05056003AB1C8 /* Weather.swift */,
-				3F60941C1CD2E09A00D82C5B /* CurrentInfo.swift */,
-				3F9DA9EA1CD98578004C2550 /* UserOptions.swift */,
-				3F2B5A1D1CB0507B003AB1C8 /* Data.swift */,
-				3F2B5A1F1CB050A1003AB1C8 /* Notification.swift */,
 				3F13E1F11CAEF3AF0075C7C6 /* Main.storyboard */,
-				3FB0BA141CDC7C4A002667FC /* NotifyRingTableViewCell.swift */,
-				3FCC1E641CDBD64400F4FA32 /* SettingTableViewCell.swift */,
-				3FCC1E621CDBD53900F4FA32 /* SettingsViewController.swift */,
-				3FB38A271CD913DE00075749 /* NotificationViewController.swift */,
-				3FCC1E601CDBCFA700F4FA32 /* NotificationsTableViewCell.swift */,
-				3F13E1EF1CAEF3AF0075C7C6 /* ViewController.swift */,
-				3FB0BA121CDC77DA002667FC /* NotifyRingViewController.swift */,
 				3F13E1F41CAEF3AF0075C7C6 /* Assets.xcassets */,
 				3F13E1F61CAEF3AF0075C7C6 /* LaunchScreen.storyboard */,
 				3F13E1F91CAEF3AF0075C7C6 /* Info.plist */,
@@ -181,6 +172,39 @@
 				3F13E20F1CAEF3AF0075C7C6 /* Info.plist */,
 			);
 			path = WeathrUITests;
+			sourceTree = "<group>";
+		};
+		3FEF94E31CDEF658001BFA5A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3F13E1EF1CAEF3AF0075C7C6 /* ViewController.swift */,
+				3FCC1E621CDBD53900F4FA32 /* SettingsViewController.swift */,
+				3FB38A271CD913DE00075749 /* NotificationViewController.swift */,
+				3FB0BA121CDC77DA002667FC /* NotifyRingViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		3FEF94E41CDEF678001BFA5A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3F2B5A1B1CB05056003AB1C8 /* Weather.swift */,
+				3F60941C1CD2E09A00D82C5B /* CurrentInfo.swift */,
+				3F9DA9EA1CD98578004C2550 /* UserOptions.swift */,
+				3F2B5A1D1CB0507B003AB1C8 /* Data.swift */,
+				3F2B5A1F1CB050A1003AB1C8 /* Notification.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		3FEF94E51CDEF6A3001BFA5A /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				3FCC1E601CDBCFA700F4FA32 /* NotificationsTableViewCell.swift */,
+				3FB0BA141CDC7C4A002667FC /* NotifyRingTableViewCell.swift */,
+				3FCC1E641CDBD64400F4FA32 /* SettingTableViewCell.swift */,
+			);
+			name = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

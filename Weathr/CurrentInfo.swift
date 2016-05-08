@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class CurrentInfo: NSObject {
     
-    var counter = 0
-    var hour = 0
-    var minute = 0
-    var amOrPM = ""
+    dynamic var counter: Int = 0
+    dynamic var hour: Int = 0
+    dynamic var minute: Int = 0
+    dynamic var amOrPM: String = ""
     
     func time() -> String {
         

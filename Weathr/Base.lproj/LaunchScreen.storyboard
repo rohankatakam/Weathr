@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,18 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-iPadPro" translatesAutoresizingMaskIntoConstraints="NO" id="vec-7V-lqq">
-                                <rect key="frame" x="133" y="133" width="334" height="334"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="334" id="Wuw-Ue-JoN"/>
-                                    <constraint firstAttribute="width" constant="334" id="yF8-fz-Dbz"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="rk2-cb-vXe">
+                                <rect key="frame" x="0.0" y="0.0" width="605" height="600"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.6131433143223981" green="0.80369302965291745" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vec-7V-lqq" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Ohs-vL-X9O"/>
-                            <constraint firstItem="vec-7V-lqq" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="vGg-Y3-Edo"/>
+                            <constraint firstItem="rk2-cb-vXe" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="5XX-Xn-SKG"/>
+                            <constraint firstItem="rk2-cb-vXe" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="CQc-Pm-yN7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rk2-cb-vXe" secondAttribute="trailing" constant="-25" id="H8C-pi-oOD"/>
+                            <constraint firstItem="rk2-cb-vXe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PpS-v4-0JH"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="rk2-cb-vXe" secondAttribute="bottom" id="uog-jr-idw"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Icon-iPadPro" width="83" height="83"/>
+        <image name="bg" width="750" height="1334"/>
     </resources>
 </document>

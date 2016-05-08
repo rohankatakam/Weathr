@@ -21,11 +21,15 @@ class CurrentInfo: NSObject {
         testHours()
         minute = NSCalendar.currentCalendar().component(.Minute, fromDate: NSDate())
         
+        var stringTime = ""
+        
         if minute > 60{
             minute = minute-60
             hour = hour+1
             testHours()
         }
+        
+        
         
         if counter == 1{
             amOrPM = "pm"
@@ -33,9 +37,14 @@ class CurrentInfo: NSObject {
         if counter == 0{
             amOrPM = "am"
         }
-    
         
-        return "\(hour):\(minute) \(amOrPM)"
+        if minute < 10{
+             stringTime = "\(hour):0\(minute) \(amOrPM)"
+        }else if minute > 10{
+            stringTime =  "\(hour):\(minute) \(amOrPM)"
+        }
+        
+        return stringTime
 
 
     }

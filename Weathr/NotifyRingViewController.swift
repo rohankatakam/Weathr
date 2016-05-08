@@ -12,11 +12,13 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
 
     @IBOutlet weak var tableView: UITableView!
     
-    var time = ["12am","1am","2am","3am","4am","5am","6am","7am","8am","9am","10am","11am", "12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm","8pm","9pm","10pm","11pm"]
+    var time = ["6am","7am","8am","9am","10am","11am", "12pm","1pm","2pm","3pm","4pm","5pm","6pm"]
     
     var defaultz = UIColor.clearColor()
     
-    var color = [UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor()]
+    var color = [UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor()]
+    
+    var notytime = ["0","0","0","0","0","0","0","0","0","0","0","0","0"]
     
     
     var background = UIColor()
@@ -48,8 +50,15 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        if color[indexPath.row] == UIColor.yellowColor(){
+            color[indexPath.row] = UIColor.clearColor()
+            notytime[indexPath.row] = "0"
+        }else{
+            notytime[indexPath.row] = time[indexPath.row]
+            color[indexPath.row] = UIColor.yellowColor()
+        }
         
-        
+        print(notytime)
         
         tableView.reloadData()
         

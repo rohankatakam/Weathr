@@ -14,7 +14,9 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     
     var time = ["12am","1am","2am","3am","4am","5am","6am","7am","8am","9am","10am","11am", "12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm","8pm","9pm","10pm","11pm"]
     
-    var color = [UIColor(), UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),UIColor(),]
+    var defaultz = UIColor.clearColor()
+    
+    var color = [UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor()]
     
     
     var background = UIColor()
@@ -33,6 +35,7 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! NotifyRingTableViewCell
         cell.timeLabel.text = time[indexPath.row]
+        cell.backgroundCell.backgroundColor = color[indexPath.row]
         
         
         
@@ -44,7 +47,9 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       
+        
+        
+        
         
         tableView.reloadData()
         

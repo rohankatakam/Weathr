@@ -31,6 +31,7 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! NotifyRingTableViewCell
         cell.timeLabel.text = time[indexPath.row]
+        cell.switchOutlet.on = swizz[indexPath.row]
         
         
         return cell

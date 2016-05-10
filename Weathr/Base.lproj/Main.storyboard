@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bnZ-QC-b5X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bnZ-QC-b5X">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -181,7 +181,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYn-HK-Ypb">
-                                <rect key="frame" x="225" y="303" width="150" height="21"/>
+                                <rect key="frame" x="225" y="289" width="150" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="---">
                                         <attributes>
@@ -194,7 +194,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLd-xU-ApF">
-                                <rect key="frame" x="225" y="145" width="150" height="150"/>
+                                <rect key="frame" x="225" y="131" width="150" height="150"/>
                                 <attributedString key="attributedText">
                                     <fragment content="---">
                                         <attributes>
@@ -206,6 +206,13 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PbT-kO-YwA">
+                                <rect key="frame" x="225" y="318" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="KOe-e3-DIu"/>
+                                    <constraint firstAttribute="height" constant="150" id="wHK-0E-HHE"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -215,12 +222,15 @@
                             <constraint firstItem="CLd-xU-ApF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hn6-e3-UOG"/>
                             <constraint firstItem="lYn-HK-Ypb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oLH-dX-bk3"/>
                             <constraint firstItem="hnI-RZ-lMW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="oQC-tZ-uYl"/>
+                            <constraint firstItem="PbT-kO-YwA" firstAttribute="top" secondItem="lYn-HK-Ypb" secondAttribute="bottom" constant="8" id="p8Y-as-quF"/>
                             <constraint firstItem="hnI-RZ-lMW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vK1-u8-lQx"/>
+                            <constraint firstItem="PbT-kO-YwA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zWs-yQ-0dv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weathr" id="hHI-BP-YTw"/>
                     <connections>
                         <outlet property="cityLabel" destination="lYn-HK-Ypb" id="Yc6-R3-bAq"/>
+                        <outlet property="imageView" destination="PbT-kO-YwA" id="Ohv-TJ-PRW"/>
                         <outlet property="weatherLabel" destination="CLd-xU-ApF" id="vag-4J-cUE"/>
                     </connections>
                 </viewController>

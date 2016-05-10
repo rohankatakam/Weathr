@@ -13,6 +13,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     let locationManager = CLLocationManager()
     let weather = Weather()
@@ -59,6 +60,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             weatherLabel.text = String(weather.temperature(latitude, longitude: longitude))
             cityLabel.text = weather.city(latitude, longitude: longitude)
             notification.notify("It is currently \(String(weather.temperature(latitude, longitude: longitude))) in \(weather.city(latitude, longitude: longitude))")
+            print(weather.description(latitude, longitude: longitude))
+            setImage(weather.description(latitude, longitude: longitude))
         }
     }
     
@@ -66,7 +69,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         currentInfo.updateTimer()
     }
     
-    
+    func setImage(condition: String){
+        if(condition == "clear sky"){
+            imageView.image = UIImage(named: "sunny")
+        } else if(condition == "few clouds"){
+            imageView.image = UIImage(named: "mostlyCloudy")
+        } else if(condition == "scattered clouds"){
+            imageView.image = UIImage(named: "cloudy")
+        } else if(condition == "broken clouds"){
+            imageView.image = UIImage(named: "cloudy")
+        } else if(condition == "shower rain"){
+            imageView.image = UIImage(named: "drizzle")
+        } else if(condition == "rain"){
+            imageView.image = UIImage(named: "slightDrizzle")
+        } else if(condition == "thunderstorm"){
+            imageView.image = UIImage(named: "thunderstorms")
+        } else if(condition == "snow"){
+            imageView.image = UIImage(named: "snow")
+        } else if(condition == "mist"){
+            imageView.image = UIImage(named: "haze")
+        }
+    }
     
 
 }

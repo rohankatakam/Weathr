@@ -16,10 +16,6 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     
     var defaultz = UIColor.clearColor()
     
-    var color = [UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor(),UIColor.clearColor()]
-    
-    var notytime = ["0","0","0","0","0","0","0","0","0","0","0","0","0"]
-    
     
     var background = UIColor()
     
@@ -37,7 +33,6 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! NotifyRingTableViewCell
         cell.timeLabel.text = time[indexPath.row]
-        cell.backgroundCell.backgroundColor = color[indexPath.row]
         
         
         
@@ -48,21 +43,6 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
         return time.count
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        if color[indexPath.row] == UIColor.yellowColor(){
-            color[indexPath.row] = UIColor.clearColor()
-            notytime[indexPath.row] = "0"
-        }else{
-            notytime[indexPath.row] = time[indexPath.row]
-            color[indexPath.row] = UIColor.yellowColor()
-        }
-        
-        print(notytime)
-        
-        tableView.reloadData()
-        
-    }
    
 
 }

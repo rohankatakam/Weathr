@@ -14,6 +14,7 @@ class SettingTableViewCell: UITableViewCell {
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var switchOutlet: UISwitch!
     @IBOutlet weak var outputLabel: UILabel!
+    @IBOutlet weak var `switch`: UISwitch!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

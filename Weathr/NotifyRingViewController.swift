@@ -16,6 +16,7 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     
     var defaultz = UIColor.clearColor()
     
+    var swizz = [false, false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
     
     var background = UIColor()
     
@@ -25,15 +26,11 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
         tableView.delegate = self
         tableView.dataSource = self
         
-        
-        
-        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! NotifyRingTableViewCell
         cell.timeLabel.text = time[indexPath.row]
-        
         
         
         return cell

@@ -132,6 +132,7 @@
                                         <connections>
                                             <outlet property="backgroundCell" destination="X0S-oF-Kn1" id="5Ip-sm-ikF"/>
                                             <outlet property="conditionLabel" destination="xXF-EP-vXz" id="ZBS-Xw-Nft"/>
+                                            <outlet property="switchOutlet" destination="c80-RV-Lqt" id="itS-0u-ra1"/>
                                             <outlet property="tempLabel" destination="f4h-MP-1rh" id="oy2-Iy-tiJ"/>
                                             <outlet property="timeLabel" destination="GAf-Ck-dqw" id="QLu-ep-82g"/>
                                         </connections>

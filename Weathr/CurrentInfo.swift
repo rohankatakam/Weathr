@@ -10,7 +10,6 @@ import UIKit
 import RealmSwift
 
 class CurrentInfo: NSObject {
-    
     dynamic var counter: Int = 0
     dynamic var hour: Int = 0
     dynamic var minute: Int = 0

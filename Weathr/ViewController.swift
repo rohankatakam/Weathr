@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import RealmSwift
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -26,6 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         
         currentInfo.startTimer()
         
@@ -68,6 +70,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func timer(){
         currentInfo.updateTimer()
     }
+    
+    func saveInstance(){
+        let newInstance = Instance()
+        newInstance.timestamp = currentInfo.time()
+        newInstance.temperature = Int(weatherLabel.text!)!
+        newInstance.location = cityLabel.text!
+        
+        do {
+            let realm = try Realm()
+            try realm.write({ () -> Void in
+                realm.add(newInstance)
+                print("Saved")
+            })
+        } catch {
+            
+        }
+    }
+    
     
     func setImage(condition: String){
         if(condition == "clear sky"){

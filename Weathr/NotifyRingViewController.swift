@@ -16,9 +16,9 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     
     var defaultz = UIColor.clearColor()
     
-    var swizz = [false, false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-    
     var background = UIColor()
+      
+    var swizz = [false, false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,10 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! NotifyRingTableViewCell
         cell.timeLabel.text = time[indexPath.row]
         cell.switchOutlet.on = swizz[indexPath.row]
-        
+        if cell.switchOutlet.on == true{
+            swizz[indexPath.row] = true
+            print(swizz)
+        }
         
         return cell
     }
@@ -40,6 +43,7 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return time.count
     }
+   
     
    
 

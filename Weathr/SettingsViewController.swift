@@ -13,12 +13,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
-    var setting = ["Test Notification"]
+    var setting = ["Test Notification", "Current Time", "Current Location"]
     
     var notification = Notification()
     
     var userOptions = UserOptions()
-
+    
+    var currentInfo = CurrentInfo()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,17 +40,18 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
          cell.titleLabel.text = setting[indexPath.row]
         
         //func for table View Cell
-        func description(x:Int,y: String, z: String, a: Bool){
+        func description(x:Int,y: String, z: String){
             if setting[x] == setting[indexPath.row]{
                 cell.subTitleLabel.text = y
                 cell.outputLabel.text = z
-                cell.switchOutlet.hidden = a
                 
             }
         }
         
-        
-        description(0, y: "Send a test notification", z: "", a: true)
+        var weather = Weather()
+        description(0, y: "Send a test notification", z: "")
+        description(1, y: "Current Time", z: currentInfo.time())
+        //description(2, y: "Current Location", z: )
         
         return cell
         
@@ -58,11 +61,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
     
         
-    if setting[0] == setting[indexPath.row]{
+        if setting[0] == setting[indexPath.row]{
             notification.notify("Test Nofication")
             tableView.reloadData()
+        }else{
+            tableView.reloadData()
         }
-        
+    
         
     }
 

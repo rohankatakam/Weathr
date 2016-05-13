@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bnZ-QC-b5X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bnZ-QC-b5X">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -450,9 +450,6 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xix-bL-5Cr">
-                                                    <rect key="frame" x="543" y="8" width="51" height="31"/>
-                                                </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="subtitle" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ng1-MU-J11">
                                                     <rect key="frame" x="8" y="47" width="490" height="30"/>
                                                     <constraints>
@@ -468,13 +465,18 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Output" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Z7-Oi-OgJ">
-                                                    <rect key="frame" x="506" y="47" width="86" height="33"/>
+                                                    <rect key="frame" x="471" y="40" width="121" height="33"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="86" id="Z6R-Xa-msX"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Z6R-Xa-msX"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -485,21 +487,24 @@
                                                 <constraint firstItem="ng1-MU-J11" firstAttribute="leading" secondItem="4eJ-ME-Bsg" secondAttribute="leading" constant="8" id="D0T-qB-pBd"/>
                                                 <constraint firstItem="2Z7-Oi-OgJ" firstAttribute="leading" secondItem="ng1-MU-J11" secondAttribute="trailing" constant="8" id="EOy-9j-swM"/>
                                                 <constraint firstItem="lbb-sQ-IPp" firstAttribute="top" secondItem="4eJ-ME-Bsg" secondAttribute="top" constant="13" id="KV9-xu-sXH"/>
-                                                <constraint firstAttribute="trailing" secondItem="Xix-bL-5Cr" secondAttribute="trailing" constant="8" id="axm-4a-ZKD"/>
+                                                <constraint firstItem="2Z7-Oi-OgJ" firstAttribute="top" secondItem="4eJ-ME-Bsg" secondAttribute="top" constant="35" id="ObV-El-i6b"/>
+                                                <constraint firstAttribute="trailing" secondItem="2Z7-Oi-OgJ" secondAttribute="trailing" constant="8" id="TeQ-gA-Tt4"/>
                                                 <constraint firstItem="lbb-sQ-IPp" firstAttribute="leading" secondItem="4eJ-ME-Bsg" secondAttribute="leading" constant="8" id="hgB-TU-ief"/>
                                                 <constraint firstItem="ng1-MU-J11" firstAttribute="top" secondItem="lbb-sQ-IPp" secondAttribute="bottom" constant="1" id="pzB-4H-lGI"/>
-                                                <constraint firstItem="Xix-bL-5Cr" firstAttribute="top" secondItem="4eJ-ME-Bsg" secondAttribute="top" constant="8" id="qcq-P6-Zt6"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Z7-Oi-OgJ" secondAttribute="bottom" constant="33" id="sVT-Rf-dt9"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="Cee-Yl-tAh"/>
+                                                    <exclude reference="0fu-R7-BSA"/>
+                                                    <exclude reference="3D1-mT-b7J"/>
+                                                    <exclude reference="EOy-9j-swM"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="outputLabel" destination="2Z7-Oi-OgJ" id="MIk-Iw-lux"/>
                                             <outlet property="subTitleLabel" destination="ng1-MU-J11" id="lHP-TN-ckO"/>
-                                            <outlet property="switchOutlet" destination="Xix-bL-5Cr" id="KhD-qe-PE6"/>
                                             <outlet property="titleLabel" destination="lbb-sQ-IPp" id="L1Z-oS-c78"/>
                                         </connections>
                                     </tableViewCell>

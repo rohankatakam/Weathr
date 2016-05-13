@@ -27,9 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var instance : Instance?{
         didSet {
-            if let instance = instance, timestamp = timestamp, temperature = temperature, location = location, condition = condition {
-                
-            }
+            //Add stuff
         }
     }
     

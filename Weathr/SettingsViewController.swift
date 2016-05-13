@@ -13,11 +13,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
-    var setting = ["Test Notification"]
+    var setting = ["Test Notification", "Current Time"]
     
     var notification = Notification()
     
     var userOptions = UserOptions()
+    
+    var currentInfo = CurrentInfo()
 
     
     override func viewDidLoad() {
@@ -49,6 +51,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         
         description(0, y: "Send a test notification", z: "", a: true)
+        description(1, y: "Current Time", z: currentInfo.time(), a: true)
         
         return cell
         

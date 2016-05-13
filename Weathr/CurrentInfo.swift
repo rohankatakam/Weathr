@@ -10,10 +10,12 @@ import UIKit
 import RealmSwift
 
 class CurrentInfo: NSObject {
-    dynamic var counter: Int = 0
-    dynamic var hour: Int = 0
-    dynamic var minute: Int = 0
-    dynamic var amOrPM: String = ""
+    var counter: Int = 0
+    var hour: Int = 0
+    var minute: Int = 0
+    var amOrPM: String = ""
+    
+    var locationz = String()
     
     func time() -> String {
         

@@ -25,6 +25,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var notification = Notification()
     var data = Data()
     
+    var instance : Instance?{
+        didSet {
+            if let instance = instance, timestamp = timestamp, temperature = temperature, location = location, condition = condition {
+                
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
@@ -61,6 +69,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             weatherLabel.text = String(weather.temperature(latitude, longitude: longitude))
             cityLabel.text = weather.city(latitude, longitude: longitude)
+            currentInfo.locationz = weather.city(latitude, longitude: longitude)
             notification.notify("It is currently \(String(weather.temperature(latitude, longitude: longitude))) in \(weather.city(latitude, longitude: longitude))")
             print(weather.description(latitude, longitude: longitude))
             setImage(weather.description(latitude, longitude: longitude))
@@ -71,22 +80,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         currentInfo.updateTimer()
     }
     
-    func saveInstance(){
-        let newInstance = Instance()
-        newInstance.timestamp = currentInfo.time()
-        newInstance.temperature = Int(weatherLabel.text!)!
-        newInstance.location = cityLabel.text!
-        
-        do {
-            let realm = try Realm()
-            try realm.write({ () -> Void in
-                realm.add(newInstance)
-                print("Saved")
-            })
-        } catch {
-            
-        }
-    }
     
     
     func setImage(condition: String){

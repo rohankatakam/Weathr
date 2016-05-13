@@ -48,10 +48,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             }
         }
         
-        var weather = Weather()
         description(0, y: "Send a test notification", z: "")
         description(1, y: "Current Time", z: currentInfo.time())
-        //description(2, y: "Current Location", z: )
+        description(2, y: "Current Location", z: currentInfo.locationz)
         
         return cell
         

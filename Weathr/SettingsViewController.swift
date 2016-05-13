@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
-    var setting = ["Test Notification", "Current Time", "Current Location"]
+    var setting = ["Test Notification", "Current Time"]
     
     var notification = Notification()
     
@@ -50,7 +50,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         description(0, y: "Send a test notification", z: "")
         description(1, y: "Current Time", z: currentInfo.time())
-        description(2, y: "Current Location", z: currentInfo.locationz)
+       
         
         return cell
         

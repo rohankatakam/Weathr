@@ -59,7 +59,7 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         
-        func alert(){
+        func alert(a:String, b:String){
             let alert = UIAlertController(title: "Time", message: "Input Time You Want to Be Notifited", preferredStyle: .Alert)
             //textfield
             alert.addTextFieldWithConfigurationHandler { (textField) -> Void in
@@ -100,20 +100,12 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
             }
             
             //Add AM
-            let addAM = UIAlertAction(title: "AM", style: .Default) { (action) -> Void in
-                settingTime("am")
+            let addAM = UIAlertAction(title: a, style: .Default) { (action) -> Void in
+                settingTime(b)
                 
                 
             }
             alert.addAction(addAM)
-            
-            //Add PM
-            let addPM = UIAlertAction(title: "PM", style: .Default, handler: { (action) in
-                settingTime("pm")
-            })
-            
-            
-            alert.addAction(addPM)
             
             self.presentViewController(alert, animated: true, completion: nil)
         }
@@ -121,8 +113,10 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     
         if output[1][0] == output[indexPath.section][indexPath.row]{
             print("AM")
+            alert("AM", b: "am")
         }else if output[2][0] == output[indexPath.section][indexPath.row]{
             print("PM")
+            alert("PM", b: "pm")
         }
     
         tableView.reloadData()

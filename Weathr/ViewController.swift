@@ -72,7 +72,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             cityLabel.text = weather.city(latitude, longitude: longitude)
             currentInfo.locationz = weather.city(latitude, longitude: longitude)
             windSpeedLabel.text = "\(weather.windSpeed(latitude, longitude: longitude)) mph"
-            self.windDirectionImageView.transform = CGAffineTransformMakeRotation((CGFloat(weather.windDirection(latitude, longitude: longitude)) * CGFloat(M_PI)) / 180.0)
+            self.windDirectionImageView.transform = CGAffineTransformMakeRotation((CGFloat(90 + weather.windDirection(latitude, longitude: longitude)) * CGFloat(M_PI)) / 180.0)
             notification.notify("It is currently \(String(weather.temperature(latitude, longitude: longitude))) in \(weather.city(latitude, longitude: longitude))")
             print(weather.icon(latitude, longitude: longitude))
             print(weather.windSpeed(latitude, longitude: longitude))

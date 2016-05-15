@@ -86,6 +86,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func update(){
         let instance = Instance()
         addInstance(instance, timestamp: currentInfo.time(), temperature: weather.temperature(latitude, longitude: longitude), windSpeed: weather.windSpeed(latitude, longitude: longitude), windDirection: weather.windDirection(latitude, longitude: longitude), location: weather.city(latitude, longitude: longitude), condition: weather.description(latitude, longitude: longitude),icon: weather.icon(latitude, longitude: longitude))
+        detectChange()
     }
     
     func timer(){

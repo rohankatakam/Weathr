@@ -15,6 +15,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var windSpeedLabel: UILabel!
+    @IBOutlet weak var windDirectionImageView: UIImageView!
     
     let locationManager = CLLocationManager()
     let weather = Weather()
@@ -35,7 +37,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         var test = Instance()
-        addInstance(test, timestamp: currentInfo.time(), temperature: 00, location: "test", condition: "test")
         queryInstance()
         currentInfo.startTimer()
         
@@ -70,26 +71,33 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             weatherLabel.text = String(weather.temperature(latitude, longitude: longitude))
             cityLabel.text = weather.city(latitude, longitude: longitude)
             currentInfo.locationz = weather.city(latitude, longitude: longitude)
+            windSpeedLabel.text = "\(weather.windSpeed(latitude, longitude: longitude)) mph"
+            self.windDirectionImageView.transform = CGAffineTransformMakeRotation((CGFloat(weather.windDirection(latitude, longitude: longitude)) * CGFloat(M_PI)) / 180.0)
             notification.notify("It is currently \(String(weather.temperature(latitude, longitude: longitude))) in \(weather.city(latitude, longitude: longitude))")
             print(weather.icon(latitude, longitude: longitude))
+            print(weather.windSpeed(latitude, longitude: longitude))
+            print(weather.windDirection(latitude, longitude: longitude))
             setImage(weather.icon(latitude, longitude: longitude))
-
+            
+            
             var timer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
         }
     }
     
     func update(){
         let instance = Instance()
-        addInstance(instance, timestamp: currentInfo.time(), temperature: weather.temperature(latitude, longitude: longitude), location: weather.city(latitude, longitude: longitude), condition: weather.icon(latitude, longitude: longitude))
+        addInstance(instance, timestamp: currentInfo.time(), temperature: weather.temperature(latitude, longitude: longitude), windSpeed: weather.windSpeed(latitude, longitude: longitude), windDirection: weather.windDirection(latitude, longitude: longitude), location: weather.city(latitude, longitude: longitude), condition: weather.icon(latitude, longitude: longitude))
     }
     
     func timer(){
         currentInfo.updateTimer()
     }
     
-    func addInstance(instance: Instance, timestamp: String, temperature: Int, location: String, condition: String){
+    func addInstance(instance: Instance, timestamp: String, temperature: Int, windSpeed: Int, windDirection: Int, location: String, condition: String){
         instance.timestamp = timestamp
         instance.temperature = temperature
+        instance.windSpeed = windSpeed
+        instance.windDirection = windDirection
         instance.location = location
         instance.condition = condition
         
@@ -97,7 +105,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         try! realm.write {
             realm.add(instance)
-            print("\(instance.timestamp): [\(instance.temperature)][\(instance.condition)][\(instance.location)] - Added")
+            print("\(instance.timestamp): [\(instance.temperature)][\(instance.windSpeed)mph][\(instance.windDirection)deg][\(instance.condition)][\(instance.location)] - Added")
         }
     }
     

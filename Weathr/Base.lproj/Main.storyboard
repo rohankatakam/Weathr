@@ -213,14 +213,51 @@
                                     <constraint firstAttribute="width" constant="100" id="ScJ-hY-7Gn"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IUC-bn-8tD">
+                                <rect key="frame" x="250" y="426" width="100" height="20"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="30 mph" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w53-4J-ajd">
+                                        <rect key="frame" x="34" y="0.0" width="66" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="5Fu-ce-8lD"/>
+                                            <constraint firstAttribute="width" constant="66" id="XtG-og-gF2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="zcn-hJ-CSY">
+                                        <rect key="frame" x="6" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="7dw-pi-eGy"/>
+                                            <constraint firstAttribute="width" constant="20" id="xDk-fi-nFZ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="zcn-hJ-CSY" firstAttribute="top" secondItem="IUC-bn-8tD" secondAttribute="top" id="3oW-BB-2ee"/>
+                                    <constraint firstItem="w53-4J-ajd" firstAttribute="top" secondItem="IUC-bn-8tD" secondAttribute="top" id="FwJ-uW-kGa"/>
+                                    <constraint firstAttribute="width" constant="100" id="J5z-5Q-rnU"/>
+                                    <constraint firstAttribute="bottom" secondItem="w53-4J-ajd" secondAttribute="bottom" id="Snj-8R-PYe"/>
+                                    <constraint firstItem="w53-4J-ajd" firstAttribute="leading" secondItem="zcn-hJ-CSY" secondAttribute="trailing" constant="8" id="Xfe-Ci-oZM"/>
+                                    <constraint firstItem="zcn-hJ-CSY" firstAttribute="leading" secondItem="IUC-bn-8tD" secondAttribute="leading" constant="6" id="cGB-4e-MfC"/>
+                                    <constraint firstAttribute="bottom" secondItem="zcn-hJ-CSY" secondAttribute="bottom" id="gZb-kq-ngr"/>
+                                    <constraint firstAttribute="trailing" secondItem="w53-4J-ajd" secondAttribute="trailing" id="i1S-Wk-gD1"/>
+                                    <constraint firstAttribute="height" constant="20" id="mJD-Pp-AAQ"/>
+                                    <constraint firstItem="w53-4J-ajd" firstAttribute="leading" secondItem="zcn-hJ-CSY" secondAttribute="trailing" constant="8" id="wsx-GK-aQ4"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="IUC-bn-8tD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IxM-nG-MUR"/>
                             <constraint firstItem="hnI-RZ-lMW" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="L1j-S6-Xwc"/>
                             <constraint firstItem="PbT-kO-YwA" firstAttribute="top" secondItem="lYn-HK-Ypb" secondAttribute="bottom" constant="8" id="QAM-6o-7pZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hnI-RZ-lMW" secondAttribute="trailing" constant="-20" id="QFL-4j-u2s"/>
                             <constraint firstItem="lYn-HK-Ypb" firstAttribute="top" secondItem="CLd-xU-ApF" secondAttribute="bottom" constant="8" id="Qnk-1r-ALr"/>
                             <constraint firstItem="CLd-xU-ApF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hn6-e3-UOG"/>
+                            <constraint firstItem="IUC-bn-8tD" firstAttribute="top" secondItem="PbT-kO-YwA" secondAttribute="bottom" constant="8" id="jdt-0G-YUW"/>
                             <constraint firstItem="lYn-HK-Ypb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oLH-dX-bk3"/>
                             <constraint firstItem="hnI-RZ-lMW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="oQC-tZ-uYl"/>
                             <constraint firstItem="hnI-RZ-lMW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vK1-u8-lQx"/>
@@ -232,6 +269,8 @@
                         <outlet property="cityLabel" destination="lYn-HK-Ypb" id="Yc6-R3-bAq"/>
                         <outlet property="imageView" destination="PbT-kO-YwA" id="Ohv-TJ-PRW"/>
                         <outlet property="weatherLabel" destination="CLd-xU-ApF" id="vag-4J-cUE"/>
+                        <outlet property="windDirectionImageView" destination="zcn-hJ-CSY" id="o9P-eO-aUl"/>
+                        <outlet property="windSpeedLabel" destination="w53-4J-ajd" id="fBj-wf-Bo9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -597,6 +636,7 @@
     <resources>
         <image name="Icon-29" width="29" height="29"/>
         <image name="Icon-Small" width="29" height="29"/>
+        <image name="arrow" width="958" height="848"/>
         <image name="bg" width="750" height="1334"/>
         <image name="weathr-Small" width="29" height="29"/>
     </resources>

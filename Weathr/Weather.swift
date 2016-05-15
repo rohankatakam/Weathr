@@ -67,4 +67,42 @@ class Weather: NSObject {
         }
         return ""
     }
+    
+    func windSpeed(latitude: Double, longitude: Double) -> Int{
+        
+        let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=e4ca3ac79d18533cfdc17db5cced6263")
+        let data = NSData(contentsOfURL: url!)
+        
+        do {
+            var json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            
+            if let weather = json["wind"] as? Dictionary<String, Double> {
+                let temp = weather["speed"]
+                return Int(temp!)
+            }
+            
+        } catch {
+            print("error serializing JSON: \(error)")
+        }
+        return 0
+    }
+    
+    func windDirection(latitude: Double, longitude: Double) -> Int{
+        
+        let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=e4ca3ac79d18533cfdc17db5cced6263")
+        let data = NSData(contentsOfURL: url!)
+        
+        do {
+            var json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            
+            if let weather = json["wind"] as? Dictionary<String, Double> {
+                let temp = weather["deg"]
+                return Int(temp!)
+            }
+            
+        } catch {
+            print("error serializing JSON: \(error)")
+        }
+        return 0
+    }
 }

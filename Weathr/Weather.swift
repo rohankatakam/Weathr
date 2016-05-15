@@ -29,7 +29,7 @@ class Weather: NSObject {
     }
     
     
-    func description(latitude: Double, longitude: Double) -> String {
+    func icon(latitude: Double, longitude: Double) -> String {
         let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=e4ca3ac79d18533cfdc17db5cced6263")
         
         let data = NSData(contentsOfURL: url!)
@@ -39,7 +39,7 @@ class Weather: NSObject {
             
             if let weather = json["weather"] as? [[String: AnyObject]] {
                 for state in weather {
-                    if let name = state["description"] as? String {
+                    if let name = state["icon"] as? String {
                         return name
                     }
                 }

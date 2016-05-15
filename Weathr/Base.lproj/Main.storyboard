@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bnZ-QC-b5X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bnZ-QC-b5X">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -207,24 +207,24 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PbT-kO-YwA">
-                                <rect key="frame" x="225" y="318" width="150" height="150"/>
+                                <rect key="frame" x="275" y="318" width="50" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="KOe-e3-DIu"/>
-                                    <constraint firstAttribute="height" constant="150" id="wHK-0E-HHE"/>
+                                    <constraint firstAttribute="height" constant="50" id="CYx-ac-R6b"/>
+                                    <constraint firstAttribute="width" constant="50" id="zRf-WA-Ixj"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="PbT-kO-YwA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DG8-hE-VmN"/>
                             <constraint firstItem="hnI-RZ-lMW" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottomMargin" id="L1j-S6-Xwc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hnI-RZ-lMW" secondAttribute="trailing" constant="-20" id="QFL-4j-u2s"/>
                             <constraint firstItem="lYn-HK-Ypb" firstAttribute="top" secondItem="CLd-xU-ApF" secondAttribute="bottom" constant="8" id="Qnk-1r-ALr"/>
                             <constraint firstItem="CLd-xU-ApF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hn6-e3-UOG"/>
                             <constraint firstItem="lYn-HK-Ypb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oLH-dX-bk3"/>
+                            <constraint firstItem="PbT-kO-YwA" firstAttribute="top" secondItem="lYn-HK-Ypb" secondAttribute="bottom" constant="8" id="oP0-Wt-uZK"/>
                             <constraint firstItem="hnI-RZ-lMW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="oQC-tZ-uYl"/>
-                            <constraint firstItem="PbT-kO-YwA" firstAttribute="top" secondItem="lYn-HK-Ypb" secondAttribute="bottom" constant="8" id="p8Y-as-quF"/>
                             <constraint firstItem="hnI-RZ-lMW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vK1-u8-lQx"/>
-                            <constraint firstItem="PbT-kO-YwA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zWs-yQ-0dv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Weathr" id="hHI-BP-YTw"/>

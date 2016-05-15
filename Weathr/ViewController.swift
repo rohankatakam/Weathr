@@ -67,8 +67,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             cityLabel.text = weather.city(latitude, longitude: longitude)
             currentInfo.locationz = weather.city(latitude, longitude: longitude)
             notification.notify("It is currently \(String(weather.temperature(latitude, longitude: longitude))) in \(weather.city(latitude, longitude: longitude))")
-            print(weather.description(latitude, longitude: longitude))
-            setImage(weather.description(latitude, longitude: longitude))
+            print(weather.icon(latitude, longitude: longitude))
+            setImage(weather.icon(latitude, longitude: longitude))
         }
     }
     
@@ -101,26 +101,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    func setImage(condition: String){
-        if(condition == "clear sky"){
-            imageView.image = UIImage(named: "sunny")
-        } else if(condition == "few clouds"){
-            imageView.image = UIImage(named: "mostlyCloudy")
-        } else if(condition == "scattered clouds"){
-            imageView.image = UIImage(named: "cloudy")
-        } else if(condition == "broken clouds"){
-            imageView.image = UIImage(named: "cloudy")
-        } else if(condition == "shower rain"){
-            imageView.image = UIImage(named: "drizzle")
-        } else if(condition == "rain"){
-            imageView.image = UIImage(named: "slightDrizzle")
-        } else if(condition == "thunderstorm"){
-            imageView.image = UIImage(named: "thunderstorms")
-        } else if(condition == "snow"){
-            imageView.image = UIImage(named: "snow")
-        } else if(condition == "mist"){
-            imageView.image = UIImage(named: "haze")
-        }
+    func setImage(icon: String){
+        let url = NSURL(string: "https://openweathermap.org/img/w/\(icon).png")
+        let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+        imageView.image = UIImage(data: data!)
     }
     
 

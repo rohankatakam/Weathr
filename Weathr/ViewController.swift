@@ -140,7 +140,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         if instanceArray()[instanceArray().count - 2].condition != instanceArray()[instanceArray().count - 1].condition {
-            
+            notification.notify("The weather outside is now: \(instanceArray()[instanceArray().count - 1].condition)")
         }
     }
     

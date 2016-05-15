@@ -25,16 +25,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var notification = Notification()
     var data = Data()
     
-    var instance : Instance?{
-        didSet {
-            //Add stuff
-        }
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
+        var test = Instance()
+        addInstance(test, timestamp: currentInfo.time(), temperature: 00, location: "test", condition: "test")
+        queryInstance()
         currentInfo.startTimer()
         
         //function notification verifcation
@@ -78,6 +76,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         currentInfo.updateTimer()
     }
     
+    func addInstance(instance: Instance, timestamp: String, temperature: Int, location: String, condition: String){
+        instance.timestamp = timestamp
+        instance.temperature = temperature
+        instance.location = location
+        instance.condition = condition
+        
+        let realm = try! Realm()
+        
+        try! realm.write {
+            realm.add(instance)
+            print("\(instance.timestamp): [\(instance.temperature)][\(instance.condition)][\(instance.location)] - Added")
+        }
+    }
+    
+    func queryInstance(){
+        let realm = try! Realm()
+        
+        let allInstances = realm.objects(Instance)
+        
+        for instance in allInstances {
+            print("\(instance.timestamp): [\(instance.temperature)][\(instance.condition)][\(instance.location)] - Added")
+        }
+    }
     
     
     func setImage(condition: String){

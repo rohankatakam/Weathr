@@ -51,6 +51,28 @@ class Weather: NSObject {
         return ""
     }
     
+    func description(latitude: Double, longitude: Double) -> String {
+        let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=\(latitude)&lon=\(longitude)&appid=e4ca3ac79d18533cfdc17db5cced6263")
+        
+        let data = NSData(contentsOfURL: url!)
+        
+        do {
+            var json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+            
+            if let weather = json["weather"] as? [[String: AnyObject]] {
+                for state in weather {
+                    if let name = state["description"] as? String {
+                        return name
+                    }
+                }
+            }
+            
+        } catch {
+            print("error serializing JSON: \(error)")
+        }
+        return ""
+    }
+    
     
     
     func city(latitude: Double, longitude: Double) -> String{

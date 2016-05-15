@@ -36,8 +36,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        var test = Instance()
-        queryInstance()
+        
         currentInfo.startTimer()
         
         //function notification verifcation
@@ -68,7 +67,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         if((longitude != 0.0) && (latitude != 0.0)){
             locationManager.stopUpdatingLocation()
-            weatherLabel.text = String(weather.temperature(latitude, longitude: longitude))
+            weatherLabel.text = "\(weather.temperature(latitude, longitude: longitude))°"
             cityLabel.text = weather.city(latitude, longitude: longitude)
             currentInfo.locationz = weather.city(latitude, longitude: longitude)
             windSpeedLabel.text = "\(weather.windSpeed(latitude, longitude: longitude)) mph"
@@ -80,47 +79,70 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             setImage(weather.icon(latitude, longitude: longitude))
             
             
-            var timer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
+            var timer = NSTimer.scheduledTimerWithTimeInterval(900, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
         }
     }
     
     func update(){
         let instance = Instance()
-        addInstance(instance, timestamp: currentInfo.time(), temperature: weather.temperature(latitude, longitude: longitude), windSpeed: weather.windSpeed(latitude, longitude: longitude), windDirection: weather.windDirection(latitude, longitude: longitude), location: weather.city(latitude, longitude: longitude), condition: weather.icon(latitude, longitude: longitude))
+        addInstance(instance, timestamp: currentInfo.time(), temperature: weather.temperature(latitude, longitude: longitude), windSpeed: weather.windSpeed(latitude, longitude: longitude), windDirection: weather.windDirection(latitude, longitude: longitude), location: weather.city(latitude, longitude: longitude), condition: weather.description(latitude, longitude: longitude),icon: weather.icon(latitude, longitude: longitude))
     }
     
     func timer(){
         currentInfo.updateTimer()
     }
     
-    func addInstance(instance: Instance, timestamp: String, temperature: Int, windSpeed: Int, windDirection: Int, location: String, condition: String){
+    func addInstance(instance: Instance, timestamp: String, temperature: Int, windSpeed: Int, windDirection: Int, location: String, condition: String, icon: String){
         instance.timestamp = timestamp
         instance.temperature = temperature
         instance.windSpeed = windSpeed
         instance.windDirection = windDirection
         instance.location = location
         instance.condition = condition
+        instance.icon = icon
         
         let realm = try! Realm()
         
         try! realm.write {
             realm.add(instance)
-            print("\(instance.timestamp): [\(instance.temperature)][\(instance.windSpeed)mph][\(instance.windDirection)deg][\(instance.condition)][\(instance.location)] - Added")
+            print("\(instance.timestamp): [\(instance.temperature)][\(instance.windSpeed)mph][\(instance.windDirection)deg][\(instance.condition)][\(instance.location)][\(instance.icon)] - Added")
         }
     }
     
-    func queryInstance(){
+    func instanceArray() -> Results<(Instance)>{
         let realm = try! Realm()
         
         let allInstances = realm.objects(Instance)
         
-        for instance in allInstances {
-            print("\(instance.timestamp): [\(instance.temperature)][\(instance.condition)][\(instance.location)] - Added")
-        }
+        return allInstances
     }
     
     
-    
+    func detectChange(){
+        if instanceArray()[instanceArray().count - 2].temperature != instanceArray()[instanceArray().count - 1].temperature {
+            if (instanceArray()[instanceArray().count - 2].temperature > instanceArray()[instanceArray().count - 1].temperature) && ((instanceArray()[instanceArray().count - 2].temperature - instanceArray()[instanceArray().count - 1].temperature) >= 3) {
+                notification.notify("❄️The temperature decreased by \(instanceArray()[instanceArray().count - 2].temperature - instanceArray()[instanceArray().count - 1].temperature))°")
+            }
+            
+            if (instanceArray()[instanceArray().count - 2].temperature < instanceArray()[instanceArray().count - 1].temperature) && ((instanceArray()[instanceArray().count - 1].temperature - instanceArray()[instanceArray().count - 2].temperature) >= 3) {
+                notification.notify("🌡The temperature increased by \((instanceArray()[instanceArray().count - 1].temperature - instanceArray()[instanceArray().count - 2].temperature))°")
+            }
+        }
+        
+        if instanceArray()[instanceArray().count - 2].windSpeed != instanceArray()[instanceArray().count - 1].windSpeed {
+            if (instanceArray()[instanceArray().count - 2].windSpeed > instanceArray()[instanceArray().count - 1].windSpeed) && ((instanceArray()[instanceArray().count - 2].windSpeed - instanceArray()[instanceArray().count - 1].windSpeed) >= 3) {
+                notification.notify("😌The wind speed decreased by \(instanceArray()[instanceArray().count - 2].windSpeed - instanceArray()[instanceArray().count - 1].windSpeed))°")
+            }
+            
+            if (instanceArray()[instanceArray().count - 2].windSpeed < instanceArray()[instanceArray().count - 1].windSpeed) && ((instanceArray()[instanceArray().count - 1].windSpeed - instanceArray()[instanceArray().count - 2].windSpeed) >= 3) {
+                notification.notify("🍃The wind speed increased by \((instanceArray()[instanceArray().count - 1].windSpeed - instanceArray()[instanceArray().count - 2].windSpeed))°")
+            }
+        }
+        
+        if instanceArray()[instanceArray().count - 2].condition != instanceArray()[instanceArray().count - 1].condition {
+            
+        }
+    }
     
     func setImage(icon: String){
         let url = NSURL(string: "https://openweathermap.org/img/w/\(icon).png")

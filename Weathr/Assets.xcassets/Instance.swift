@@ -16,4 +16,5 @@ class Instance: Object {
     dynamic var windDirection = 0
     dynamic var location = ""
     dynamic var condition = ""
+    dynamic var icon = ""
 }

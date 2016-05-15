@@ -19,21 +19,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="rk2-cb-vXe">
-                                <rect key="frame" x="0.0" y="0.0" width="605" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="logoAndText" translatesAutoresizingMaskIntoConstraints="NO" id="OFO-Qn-ywD">
-                                <rect key="frame" x="50" y="-8" width="500" height="530"/>
+                                <rect key="frame" x="168" y="140" width="265" height="265"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="265" id="24a-gR-JbT"/>
+                                    <constraint firstAttribute="width" constant="265" id="iCA-h9-Dao"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.6131433143223981" green="0.80369302965291745" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="rk2-cb-vXe" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="5XX-Xn-SKG"/>
-                            <constraint firstItem="rk2-cb-vXe" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="CQc-Pm-yN7"/>
-                            <constraint firstItem="OFO-Qn-ywD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-43" id="EHe-70-X5c"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rk2-cb-vXe" secondAttribute="trailing" constant="-25" id="H8C-pi-oOD"/>
-                            <constraint firstItem="rk2-cb-vXe" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PpS-v4-0JH"/>
-                            <constraint firstItem="OFO-Qn-ywD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Uhc-nO-4he"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="rk2-cb-vXe" secondAttribute="bottom" id="uog-jr-idw"/>
+                            <constraint firstItem="OFO-Qn-ywD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3Kl-gI-akE"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="rk2-cb-vXe" secondAttribute="bottom" id="JV2-DY-lao"/>
+                            <constraint firstItem="rk2-cb-vXe" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="topMargin" id="OkS-1C-WAm"/>
+                            <constraint firstItem="rk2-cb-vXe" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="Ukn-Zc-Q5h"/>
+                            <constraint firstItem="OFO-Qn-ywD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="aaT-1b-tTy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rk2-cb-vXe" secondAttribute="trailing" constant="-20" id="vcg-M4-oWb"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -17,7 +17,7 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     
     let detail = [["Daily Notifications", "Update Notifications"],["Time"], ["Time"]]
     
-    var output = [["Get Notifications Daily", "Get Notification Update"], ["6:00AM"], ["6:00PM"]]
+    var output = [["Get Notifications Daily", "Get Notification Update"], ["6:00am"], ["6:00pm"]]
     
     let buttonHidden = [[false,false],[true],[true]]
     

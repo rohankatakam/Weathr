@@ -73,9 +73,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             notification.notify("It is currently \(String(weather.temperature(latitude, longitude: longitude))) in \(weather.city(latitude, longitude: longitude))")
             print(weather.icon(latitude, longitude: longitude))
             setImage(weather.icon(latitude, longitude: longitude))
-            
-            
-            
+
             var timer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
         }
     }

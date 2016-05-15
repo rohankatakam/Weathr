@@ -84,9 +84,19 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
             func settingTime(x: String){
                 let hour = alert.textFields![0] as UITextField
                 let minute = alert.textFields![1] as UITextField
+                var stringMinute: String = String(minute.text!)
                 tableView.reloadData()
                 
-                print("\(hour.text!):\(minute.text!)\(x)")
+                if Int(hour.text!) < 12 && Int(minute.text!) < 60{
+                    if Int(minute.text!) < 10{
+                        stringMinute = "0\(stringMinute)"
+                    }
+                    output[indexPath.section][indexPath.row] = "\(hour.text!):\(stringMinute)\(x)"
+                }else{
+                    //nothing
+                }
+                
+                
             }
             
             //Add AM

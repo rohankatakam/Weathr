@@ -100,8 +100,8 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
             }
             
             //Add AM
-            let addAM = UIAlertAction(title: "AM", style: .Default) { (action) -> Void in
-                settingTime("am")
+            let addAM = UIAlertAction(title: a, style: .Default) { (action) -> Void in
+                settingTime(b)
                 
                 
             }
@@ -113,8 +113,10 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     
         if output[1][0] == output[indexPath.section][indexPath.row]{
             print("AM")
+            alert("AM", b: "am")
         }else if output[2][0] == output[indexPath.section][indexPath.row]{
             print("PM")
+            alert("PM", b: "pm")
         }
     
         tableView.reloadData()

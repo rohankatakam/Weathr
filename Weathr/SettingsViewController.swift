@@ -13,7 +13,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
-    var setting = ["Test Notification", "Current Time"]
+    var setting = ["Test Notification", "Current Time", "Units", "Share Weather Options"]
     
     var notification = Notification()
     
@@ -21,6 +21,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     var currentInfo = CurrentInfo()
     
+    var unit = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,17 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         }
         
         description(0, y: "Send a test notification", z: "")
-        description(1, y: "Current Time", z: currentInfo.time())
+        description(1, y: "Update Current Time Current Time", z: currentInfo.time())
+        
+        
+        if unit == "" {
+            
+            unit = "F"
+            
+        }
+        
+        description(2, y: "Change between Fahrenheit to Celcius", z: unit)
+        description(3, y: "Share the weather with someone special!", z: "")
        
         
         return cell
@@ -63,12 +74,48 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         if setting[0] == setting[indexPath.row]{
             notification.notify("Test Nofication")
             tableView.reloadData()
+        }else if setting[1] == setting[indexPath.row]{
+            print(currentInfo.time())
+            tableView.reloadData()
+        }else if setting[2] == setting[indexPath.row]{
+            if unit == "F" {
+                unit = "C"
+            }else if unit == "C"{
+                unit = "F"
+            }
+        tableView.reloadData()
+        }else if setting[3] == setting[indexPath.row]{
+            func displayAlert(title: String, message: String) {
+                let alertController = UIAlertController(title: "title", message: "message", preferredStyle: .Alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                presentViewController(alertController, animated: true, completion: nil)
+                return
+            }
+            
+            func displayShareSheet(shareContent:String) {
+                let activityViewController = UIActivityViewController(activityItems: [shareContent as NSString], applicationActivities: nil)
+                presentViewController(activityViewController, animated: true, completion: {})
+            }
+            
+            displayShareSheet("The Current Weather at  ______ is ________")
+            tableView.reloadData()
         }else{
             tableView.reloadData()
         }
     
         
     }
+    
+    func queryInstance(){
+        let realm = try! Realm()
+        
+        let allInstances = realm.objects(Instance)
+        
+        for instance in allInstances {
+            print("\(instance.timestamp): [\(instance.temperature)][\(instance.condition)][\(instance.location)] - Added")
+        }
+    }
+    
 
     
 

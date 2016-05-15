@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 

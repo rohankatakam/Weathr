@@ -7,18 +7,21 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NotifyRingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var time = ["6am","7am","8am","9am","10am","11am", "12pm","1pm","2pm","3pm","4pm","5pm","6pm"]
+    var onOff = ["Daily Notifications", "Update Notifications"]
+    
+    var mornz = ["Time", "Locations"]
+    
+    var afternz = ["Time", "Locations"]
     
     var defaultz = UIColor.clearColor()
     
     var background = UIColor()
-      
-    var swizz = [false, false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,18 +33,13 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! NotifyRingTableViewCell
-        cell.timeLabel.text = time[indexPath.row]
-        cell.switchOutlet.on = swizz[indexPath.row]
-        if cell.switchOutlet.on == true{
-            swizz[indexPath.row] = true
-            print(swizz)
-        }
+        
         
         return cell
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return time.count
+        return 5
     }
    
     

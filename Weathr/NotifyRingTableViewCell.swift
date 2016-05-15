@@ -10,11 +10,11 @@ import UIKit
 
 class NotifyRingTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var conditionLabel: UILabel!
-    @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var backgroundCell: UIView!
-    @IBOutlet weak var switchOutlet: UISwitch!
+    @IBOutlet weak var switchOnOff: UISwitch!
+   
     
     
     
@@ -29,4 +29,5 @@ class NotifyRingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    
 }

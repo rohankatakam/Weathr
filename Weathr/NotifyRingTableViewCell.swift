@@ -16,6 +16,8 @@ class NotifyRingTableViewCell: UITableViewCell {
     @IBOutlet weak var backgroundCell: UIView!
     @IBOutlet weak var switchOutlet: UISwitch!
     
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

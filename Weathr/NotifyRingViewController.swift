@@ -13,11 +13,9 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
 
     @IBOutlet weak var tableView: UITableView!
     
-    var onOff = ["Daily Notifications", "Update Notifications"]
+    let sections = ["Ring", "Morning", "Afternoon"]
     
-    var mornz = ["Time", "Locations"]
-    
-    var afternz = ["Time", "Locations"]
+    let detail = [["Daily Notifications", "Update Notifications"],["Time", "Locations"], ["Time", "Locations"]]
     
     var defaultz = UIColor.clearColor()
     
@@ -34,13 +32,22 @@ class NotifyRingViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! NotifyRingTableViewCell
         
-        
+        cell.timeLabel.text = detail[indexPath.section][indexPath.row]
         return cell
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return 1 //detail\[sections\].count
     }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return  "hello" //sections\[section\]
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
    
     
    

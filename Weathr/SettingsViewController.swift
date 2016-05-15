@@ -97,7 +97,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                 presentViewController(activityViewController, animated: true, completion: {})
             }
             
-            displayShareSheet("The Current Weather at  ______ is ________")
+            displayShareSheet("The Current Weather at ______ is ________")
             tableView.reloadData()
         }else{
             tableView.reloadData()

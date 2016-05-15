@@ -25,6 +25,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var notification = Notification()
     var data = Data()
     
+    var seconds = 0
+    var time = NSTimer()
+    var timerIsOn = false
+    
 
     
     override func viewDidLoad() {
@@ -69,7 +73,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             notification.notify("It is currently \(String(weather.temperature(latitude, longitude: longitude))) in \(weather.city(latitude, longitude: longitude))")
             print(weather.icon(latitude, longitude: longitude))
             setImage(weather.icon(latitude, longitude: longitude))
+            
+            
+            
+            var timer = NSTimer.scheduledTimerWithTimeInterval(15, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
         }
+    }
+    
+    func update(){
+        let instance = Instance()
+        addInstance(instance, timestamp: currentInfo.time(), temperature: weather.temperature(latitude, longitude: longitude), location: weather.city(latitude, longitude: longitude), condition: weather.icon(latitude, longitude: longitude))
     }
     
     func timer(){
@@ -99,6 +112,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print("\(instance.timestamp): [\(instance.temperature)][\(instance.condition)][\(instance.location)] - Added")
         }
     }
+    
+    
     
     
     func setImage(icon: String){

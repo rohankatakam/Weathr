@@ -14,8 +14,9 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var noNotifications: UILabel!
     
+    var userOptions: [UserOptions] = []
+
     
-    var notify = ["notification part 1", "notification part 2", "notification part 3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +24,11 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         myTableView.delegate = self
         myTableView.dataSource = self
        
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         showLabel()
-        return 5
+        return userOptions.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -36,15 +36,12 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         
         let myCell = myTableView.dequeueReusableCellWithIdentifier("myCell", forIndexPath: indexPath) as! NotificationsTableViewCell
         
-        func customView(a: String, c: String, d: String, e: String, f: String){
-            myCell.timeLabel.text = a
-            myCell.conditionLabel.text = c
-            myCell.tempLabel.text = d
-            myCell.humidityLabel.text = "Humidity Level: " + e
-            myCell.windLabel.text = "Wind Speed " + f
-        }
+        myCell.timeLabel.text = userOptions[indexPath.row].time
+        myCell.conditionLabel.text = userOptions[indexPath.row].condition
+        myCell.tempLabel.text = userOptions[indexPath.row].temp
+        myCell.windLabel.text = "Wind Speed " + userOptions[indexPath.row].wind
         
-        customView("6:00am", c: "Windy", d: "60F", e: "68", f: "80mph")
+        //customView(
         
         return myCell
     }
@@ -56,7 +53,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            notify.removeAtIndex(indexPath.row)
+            userOptions.removeAtIndex(indexPath.row)
             myTableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation:  UITableViewRowAnimation.Automatic)
             showLabel()
             
@@ -66,7 +63,7 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     
     func showLabel(){
         
-        if notify.count > 0{
+        if userOptions.count > 0{
             noNotifications.hidden = true
         }else{
             noNotifications.hidden = false
@@ -75,10 +72,9 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     @IBAction func clearButton(sender: AnyObject) {
-        notify.removeAll()
+        userOptions.removeAll()
         myTableView.reloadData()
         noNotifications.hidden = false
     }
-    
     
 }

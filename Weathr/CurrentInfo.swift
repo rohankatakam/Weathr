@@ -88,7 +88,6 @@ class CurrentInfo: NSObject {
     func updateTimer(){
         seconds = seconds+1
         if seconds >= 15{
-            print(time())
             stopTimer()
             startTimer()
         }

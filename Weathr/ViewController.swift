@@ -54,7 +54,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
-        
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -63,7 +62,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let long = locValue.longitude
         latitude = lat
         longitude = long
-        print(String(weather.temperature(latitude, longitude: longitude)))
+        print("\(latitude) \(longitude)")
         
         if((longitude != 0.0) && (latitude != 0.0)){
             locationManager.stopUpdatingLocation()
@@ -72,14 +71,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             currentInfo.locationz = weather.city(latitude, longitude: longitude)
             windSpeedLabel.text = "\(weather.windSpeed(latitude, longitude: longitude)) mph"
             self.windDirectionImageView.transform = CGAffineTransformMakeRotation((CGFloat(90 + weather.windDirection(latitude, longitude: longitude)) * CGFloat(M_PI)) / 180.0)
-            notification.notify("It is currently \(String(weather.temperature(latitude, longitude: longitude))) in \(weather.city(latitude, longitude: longitude))")
-            print(weather.icon(latitude, longitude: longitude))
-            print(weather.windSpeed(latitude, longitude: longitude))
-            print(weather.windDirection(latitude, longitude: longitude))
             setImage(weather.icon(latitude, longitude: longitude))
             
-            
-            var timer = NSTimer.scheduledTimerWithTimeInterval(900, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
+            var timer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(UIMenuController.update), userInfo: nil, repeats: true)
         }
     }
     
@@ -122,7 +116,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     func detectChange(){
         if instanceArray()[instanceArray().count - 2].temperature != instanceArray()[instanceArray().count - 1].temperature {
             if (instanceArray()[instanceArray().count - 2].temperature > instanceArray()[instanceArray().count - 1].temperature) && ((instanceArray()[instanceArray().count - 2].temperature - instanceArray()[instanceArray().count - 1].temperature) >= 3) {
-                notification.notify("❄️The temperature decreased by \(instanceArray()[instanceArray().count - 2].temperature - instanceArray()[instanceArray().count - 1].temperature))°")
+                notification.notify("❄️The temperature decreased by \(instanceArray()[instanceArray().count - 2].temperature - instanceArray()[instanceArray().count - 1].temperature)°")
             }
             
             if (instanceArray()[instanceArray().count - 2].temperature < instanceArray()[instanceArray().count - 1].temperature) && ((instanceArray()[instanceArray().count - 1].temperature - instanceArray()[instanceArray().count - 2].temperature) >= 3) {

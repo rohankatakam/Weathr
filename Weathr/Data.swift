@@ -10,21 +10,20 @@ import UIKit
 
 class Data: NSObject {
     
-    func saveData(){
-        save()
-        exit(0)
-    }
+    var timeNotified = ""
     
-    
-    func load() {
+    func load(textField: UITextField){
         if let savedText = NSUserDefaults.standardUserDefaults().stringForKey("savedString"){
-            //saving info like locatoin.
+            textField.text = savedText
         }
-   
-
     }
-    func save(){
-        //NSUserDefaults.standardUserDefaults().setObject(<#T##value: AnyObject?##AnyObject?#>, forKey: "savedString")
+    
+    
+    func save(textField: UITextField){
+        NSUserDefaults.standardUserDefaults().setObject(textField.text!, forKey: "savedString")
     }
+    
+    
+    
     
 }

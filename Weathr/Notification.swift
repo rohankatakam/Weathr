@@ -6,18 +6,38 @@
 //  Copyright © 2016 Rohan. All rights reserved.
 //
 
+import RealmSwift
 import UIKit
 
 class Notification: UIViewController {
 
-    func notificationPopUp(){
+    func notify(text: String){
         let notification = UILocalNotification()
         notification.fireDate = NSDate(timeIntervalSinceNow: 5)
-        notification.alertBody = "Hey you! Yeah you! Swife to unlock!"
-        notification.alertAction = "be awesome!"
+        notification.alertBody = text
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.userInfo = ["CustonField1": "w00t"]
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+    
+    //Verify to see if the user want notifications to show up
+    func notificationVerifcation(){
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        func scheduleLocal(sender: AnyObject) {
+            let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+            
+            if settings!.types == .None{
+                let ac = UIAlertController(title: "Can't Schedule", message: "Either we don't have permission to scheduel notification, or we haven't asked yet", preferredStyle: .Alert)
+                ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                presentViewController(ac, animated: true, completion: nil)
+                return
+            }
+        }
+        
+        
+        
     }
 
     
